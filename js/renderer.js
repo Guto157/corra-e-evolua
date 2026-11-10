@@ -6,47 +6,59 @@ function ellipse(x,y,rx,ry,fill,rotation=0){ctx.fillStyle=fill;ctx.beginPath();c
 function line(points,color,width){ctx.strokeStyle=color;ctx.lineWidth=width;ctx.lineCap="round";ctx.lineJoin="round";ctx.beginPath();ctx.moveTo(...points[0]);for(let i=1;i<points.length;i++)ctx.lineTo(...points[i]);ctx.stroke();}
 function gradient(x,y,x2,y2,stops){const g=ctx.createLinearGradient(x,y,x2,y2);for(const [p,c] of stops)g.addColorStop(p,c);return g;}
 function drawRunner(x,y,phase,female){
- const bounce=Math.sin(phase*2)*2.5, swing=Math.sin(phase*2), front=swing*13, back=-swing*13;
- ctx.save();ctx.translate(x,y+bounce);ctx.scale(1.48,1.48);
- ellipse(0,4,31,7,"#10263b42");
- const skin="#e6a77f",skinShade="#c98160",shirt=female?"#d94d91":"#2678d2",shirtDark=female?"#9e326d":"#174e9a",pants=female?"#563c70":"#263b59";
- // legs behind and front
- line([[-5,-29],[-13+back*.55,-14],[-19+back,-4]],"#26344a",9);
- line([[5,-29],[13+front*.55,-14],[20+front,-4]],"#26344a",9);
- ellipse(-19+back,-4,5,5,skin);ellipse(20+front,-4,5,5,skin);
- // shorts
- ctx.fillStyle=pants;ctx.beginPath();ctx.moveTo(-11,-43);ctx.quadraticCurveTo(0,-39,11,-43);ctx.lineTo(10,-25);ctx.lineTo(3,-23);ctx.lineTo(0,-34);ctx.lineTo(-4,-23);ctx.lineTo(-12,-25);ctx.closePath();ctx.fill();
- line([[-7,-26],[-13+back*.55,-13],[-20+back,-4]],skin,6.5);
- line([[6,-26],[14+front*.55,-13],[21+front,-4]],skin,6.5);
- // sneakers with layered sole
- function shoe(sx,sy,flip){ctx.save();ctx.translate(sx,sy);ctx.scale(flip,1);ellipse(0,1,11,4,"#182d47");rounded(-10,-6,19,7,3,"#f6f8ff");rounded(-8,-10,15,6,3,"#2467bb");line([[-4,-8],[1,-5],[5,-8]],"#d9f1ff",1.5);ctx.restore();}
- shoe(-21+back,-4,1);shoe(21+front,-4,1);
- // torso jacket
- ctx.fillStyle=shirtDark;ctx.beginPath();ctx.moveTo(-11,-61);ctx.quadraticCurveTo(-2,-68,10,-61);ctx.lineTo(12,-37);ctx.quadraticCurveTo(0,-30,-12,-37);ctx.closePath();ctx.fill();
- ctx.fillStyle=shirt;ctx.beginPath();ctx.moveTo(-9,-62);ctx.quadraticCurveTo(0,-67,9,-61);ctx.lineTo(10,-39);ctx.quadraticCurveTo(0,-34,-10,-39);ctx.closePath();ctx.fill();
- // shirt details / zipper
- line([[0,-62],[1,-39]],"#d8efff",1.4);ellipse(-6,-53,2,2,"#ffffff88");
- // arms in running pose
- line([[-9,-58],[-17+back*.35,-47],[-11+back*.35,-39]],shirtDark,8);
- line([[-9,-57],[-17+back*.35,-47],[-11+back*.35,-39]],skin,5.2);
- line([[9,-58],[17+front*.35,-49],[13+front*.35,-41]],shirtDark,8);
- line([[9,-57],[17+front*.35,-48],[13+front*.35,-40]],skin,5.2);
- ellipse(-11+back*.35,-39,4,4,skin);ellipse(13+front*.35,-41,4,4,skin);
- // neck and head
- rounded(-3,-69,7,12,3,skin);
- ellipse(1,-77,12,14,skin,-.12);
- ellipse(11,-75,3,4,skin);
- // ear detail
- ellipse(10,-75,1.5,2,skinShade);
- // hair silhouette
- ctx.fillStyle=female?"#39243a":"#39291f";ctx.beginPath();ctx.moveTo(-10,-77);ctx.quadraticCurveTo(-14,-91,0,-93);ctx.quadraticCurveTo(13,-94,14,-81);ctx.quadraticCurveTo(9,-84,5,-87);ctx.quadraticCurveTo(0,-81,-6,-82);ctx.lineTo(-9,-72);ctx.closePath();ctx.fill();
- if(female){ctx.beginPath();ctx.moveTo(-9,-81);ctx.quadraticCurveTo(-17,-72,-12,-57);ctx.quadraticCurveTo(-5,-63,-6,-77);ctx.fill();ctx.fillStyle="#e85b9c";ctx.fillRect(-7,-88,13,2);}
- else {ctx.fillStyle="#65442d";ctx.beginPath();ctx.moveTo(-6,-89);ctx.quadraticCurveTo(1,-96,8,-88);ctx.lineTo(2,-86);ctx.fill();}
- // face, eye and expression
- ellipse(6,-78,1.7,2.3,"#253044");
- line([[7,-71],[10,-70],[12,-71]],"#9d554c",1.1);
- // wrist bands
- rounded(-17+back*.35,-44,6,3,1.5,"#172d45");rounded(10+front*.35,-46,6,3,1.5,"#172d45");
+ const cycle=phase*1.35, s=Math.sin(cycle), c=Math.cos(cycle);
+ ctx.save();ctx.translate(x,y+Math.abs(s)*2);ctx.scale(1.42,1.42);
+ const skin="#d99a73",skinLight="#f0b58d",shirt=female?"#df4c91":"#1680c9",shirtShade=female?"#9f2d64":"#10528b";
+ // sombra e linhas de velocidade atrás do corpo
+ ellipse(-2,3,30,5,"#10263b55");
+ ctx.globalAlpha=.5;
+ line([[-47,-63],[-32,-63]],"#f8ffff",2.5);
+ line([[-53,-48],[-36,-48]],"#f8ffff",2);
+ line([[-43,-31],[-31,-31]],"#f8ffff",1.7);
+ ctx.globalAlpha=1;
+ // perna distante, joelho e pé em movimento
+ const rearKneeX=-7-s*12, rearKneeY=-17-Math.max(0,-s)*12;
+ line([[-3,-34],[rearKneeX,rearKneeY],[-13-s*23,-5]],"#26374b",9);
+ line([[-3,-34],[rearKneeX,rearKneeY],[-13-s*23,-5]],"#344b62",5.5);
+ // tênis distante apontado para a direita
+ ctx.save();ctx.translate(-13-s*23,-5);ctx.rotate(-.12+s*.28);
+ ellipse(1,2,11,4,"#142b40");rounded(-1,-5,18,7,3,"#f3f6f8");rounded(2,-8,13,5,2,"#2674b8");line([[5,-5],[10,-3],[14,-5]],"#d7f3ff",1.3);ctx.restore();
+ // perna próxima
+ const kneeX=8+s*13,kneeY=-18+Math.max(0,s)*12;
+ line([[2,-35],[kneeX,kneeY],[13+s*24,-5]],"#1d2d43",10);
+ line([[2,-35],[kneeX,kneeY],[13+s*24,-5]],"#425b76",6);
+ // tênis próximo
+ ctx.save();ctx.translate(13+s*24,-5);ctx.rotate(.08-s*.3);
+ ellipse(1,2,12,4,"#10283e");rounded(-1,-5,20,8,3,"#ffffff");rounded(3,-9,14,6,2,female?"#d94d8c":"#1c75bd");line([[5,-6],[10,-3],[15,-6]],"#d7f3ff",1.4);ctx.restore();
+ // tronco inclinado para frente
+ ctx.save();ctx.translate(1,-49);ctx.rotate(-.13);
+ ctx.fillStyle=shirtShade;ctx.beginPath();ctx.moveTo(-10,-13);ctx.quadraticCurveTo(-4,-20,8,-16);ctx.lineTo(14,8);ctx.quadraticCurveTo(2,15,-12,8);ctx.closePath();ctx.fill();
+ ctx.fillStyle=shirt;ctx.beginPath();ctx.moveTo(-8,-14);ctx.quadraticCurveTo(-2,-19,8,-14);ctx.lineTo(11,6);ctx.quadraticCurveTo(0,12,-10,6);ctx.closePath();ctx.fill();
+ line([[2,-13],[4,7]],"#d9f3ff",1.5);
+ // braço de trás
+ line([[-7,-10],[-18+s*8,-1],[-25+s*10,-12]],shirtShade,8);
+ line([[-7,-10],[-18+s*8,-1],[-25+s*10,-12]],skin,5);
+ // braço da frente
+ line([[8,-10],[17-s*8,-1],[22-s*10,-12]],shirtShade,8);
+ line([[8,-10],[17-s*8,-1],[22-s*10,-12]],skinLight,5);
+ ellipse(-25+s*10,-12,3.5,4,skin);ellipse(22-s*10,-12,3.5,4,skin);
+ ctx.restore();
+ // pescoço e cabeça em perfil, olhando para a direita
+ rounded(3,-76,8,13,3,skin);
+ ellipse(7,-86,11,13,skinLight,-.16);
+ // nariz e queixo do perfil
+ ctx.beginPath();ctx.moveTo(15,-88);ctx.lineTo(21,-83);ctx.lineTo(15,-81);ctx.fillStyle=skinLight;ctx.fill();
+ ellipse(17,-83,2,2,skin);
+ // cabelo e nuca
+ ctx.fillStyle=female?"#39243a":"#34251e";
+ ctx.beginPath();ctx.moveTo(-3,-87);ctx.quadraticCurveTo(-8,-105,8,-104);ctx.quadraticCurveTo(21,-103,19,-91);ctx.quadraticCurveTo(13,-96,8,-95);ctx.quadraticCurveTo(2,-90,0,-82);ctx.lineTo(-5,-78);ctx.closePath();ctx.fill();
+ if(female){ctx.beginPath();ctx.moveTo(-2,-92);ctx.quadraticCurveTo(-14,-79,-7,-65);ctx.quadraticCurveTo(0,-72,1,-86);ctx.fill();ctx.fillStyle="#f16ca7";ctx.beginPath();ctx.arc(4,-100,3,0,TAU);ctx.fill();}
+ else {ctx.fillStyle="#68452d";ctx.beginPath();ctx.moveTo(0,-101);ctx.quadraticCurveTo(9,-109,16,-100);ctx.lineTo(9,-98);ctx.fill();}
+ // olho visível e expressão determinada
+ ellipse(13,-88,1.5,2,"#202c3b");
+ line([[17,-77],[20,-76]],"#a75d50",1.1);
+ // faixa esportiva no pulso
+ rounded(18-s*8,-4,5,2,1,"#f7d36a");
  ctx.restore();
 }
 function drawCity(w,ground,phase){
