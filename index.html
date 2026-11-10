@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101b2d">
+<meta name="description" content="Corra, evolua e conquiste novas distâncias.">
+<title>Corra e Evolua</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-shell">
+<header class="topbar">
+  <a class="brand" href="./"><span class="brand-mark">↗</span><span>CORRA <b>E EVOLUA</b><small>SUA JORNADA COMEÇA AGORA</small></span></a>
+  <button class="icon-button" id="soundButton" aria-label="Ativar ou desativar som">♫</button>
+</header>
+<main>
+<section class="hero-row">
+  <div><p class="eyebrow">PAINEL DO CORREDOR</p><h1>Vamos evoluir?</h1><p class="muted">Cada corrida é um passo a mais.</p></div>
+  <div class="level-chip"><span>NÍVEL</span><strong id="levelValue">1</strong></div>
+</section>
+<section class="stats-grid">
+  <article class="stat-card"><span>🪙 Moedas</span><strong id="coinsValue">0</strong></article>
+  <article class="stat-card"><span>⭐ Experiência</span><strong id="xpValue">0 / 100</strong></article>
+  <article class="stat-card"><span>🏁 Recorde</span><strong id="recordValue">0 m</strong></article>
+</section>
+<section class="run-panel">
+  <div class="run-heading"><div><span class="eyebrow">PISTA 01</span><h2>Campo de treino</h2></div><span class="status-pill" id="runStatus">PRONTO</span></div>
+  <div class="track-wrap">
+    <canvas id="gameCanvas" aria-label="Personagem correndo em uma pista lateral"></canvas>
+    <div class="track-overlay"><span id="distanceValue">0 m</span><span id="speedValue">0 km/h</span></div>
+  </div>
+  <div class="energy-row"><div><span>⚡ Energia</span><b id="energyValue">100 / 100</b></div><div class="energy-track"><i id="energyBar"></i></div></div>
+  <div class="run-actions"><button class="primary-button" id="runButton">▶ Iniciar corrida</button><button class="secondary-button" id="recoverButton">＋ Recuperar energia</button></div>
+  <p class="hint" id="runHint">Seu personagem corre automaticamente. Quando a energia acabar, receba suas recompensas.</p>
+</section>
+<section class="lower-grid">
+  <article class="panel character-panel"><div class="section-heading"><div><span class="eyebrow">SEU CORREDOR</span><h2>Personagem</h2></div></div>
+    <div class="choice-row"><button class="choice active" data-character="male">♂ Masculino</button><button class="choice" data-character="female">♀ Feminino</button></div>
+    <div class="mini-info"><span>Identidade visual fixa</span><b>Equipamentos em breve</b></div>
+  </article>
+  <article class="panel upgrade-panel"><div class="section-heading"><div><span class="eyebrow">PROGRESSO</span><h2>Melhorias</h2></div></div>
+    <div class="upgrade-item"><div><b>⚡ Capacidade de energia</b><small id="energyLevel">Nível 1 · 100 pontos</small></div><button class="buy-button" id="buyEnergy">Melhorar · 50 🪙</button></div>
+    <div class="upgrade-item"><div><b>👟 Velocidade</b><small id="speedLevel">Nível 1 · 1.0x</small></div><button class="buy-button" id="buySpeed">Melhorar · 75 🪙</button></div>
+    <div class="upgrade-item"><div><b>💪 Resistência</b><small id="staminaLevel">Nível 1 · consumo reduzido</small></div><button class="buy-button" id="buyStamina">Melhorar · 100 🪙</button></div>
+  </article>
+</section>
+<section class="panel summary-panel"><div><span class="eyebrow">RESUMO DA JORNADA</span><h2>Seu progresso</h2></div><div class="summary-stats"><div><small>Distância total</small><b id="totalDistance">0 m</b></div><div><small>Corridas concluídas</small><b id="runsValue">0</b></div><div><small>Energia máxima</small><b id="maxEnergy">100</b></div></div></section>
+</main>
+<footer>Corra e Evolua <span>•</span> Seu ritmo, sua evolução.</footer>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

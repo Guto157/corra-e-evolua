@@ -1,0 +1,10 @@
+{
+  "name": "Corra e Evolua",
+  "short_name": "Corra e Evolua",
+  "description": "Um jogo idle de corrida e evolução.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#101b2d",
+  "theme_color": "#101b2d",
+  "orientation": "portrait"
+}
