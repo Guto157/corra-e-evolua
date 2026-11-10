@@ -1,6 +1,6 @@
 export const CONFIG = Object.freeze({
   startingCoins: 120,
-  startingEnergy: 100,
+  startingEnergy: 10,
   baseRunSpeed: 7,
   energyDrainPerSecond: 1.8,
   coinPerMeter: 0.12,
