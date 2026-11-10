@@ -4,14 +4,14 @@ export function upgradeCost(type, level) {
   return Math.round(bases[type] * Math.pow(1.55, Math.max(0, level - 1)));
 }
 export function applyUpgrade(state, type) {
-  const current = state.upgrades[type];
-  const cost = upgradeCost(type, current);
-  if (!Object.hasOwn(state.upgrades, type) || state.coins < cost) return { ok: false, cost };
+  if (!Object.hasOwn(state.upgrades, type)) return { ok: false, cost: 0 };
+  const current = state.upgrades[type], cost = upgradeCost(type, current);
+  if (state.coins < cost) return { ok: false, cost };
   state.coins -= cost;
   state.upgrades[type] += 1;
   if (type === "energy") {
-    state.maxEnergy += 15;
-    state.energy = Math.min(state.maxEnergy, state.energy + 15);
+    state.maxEnergy += 5;
+    state.energy = Math.min(state.maxEnergy, state.energy + 5);
   }
   return { ok: true, cost };
 }
