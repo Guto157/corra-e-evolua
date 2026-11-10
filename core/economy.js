@@ -1,18 +1,14 @@
 import { CONFIG } from "./config.js";
 export function upgradeCost(type, level) {
-  const bases = { energy: CONFIG.energyUpgradeBase, speed: CONFIG.speedUpgradeBase, stamina: CONFIG.staminaUpgradeBase };
-  return Math.round(bases[type] * Math.pow(1.55, Math.max(0, level - 1)));
+  if (type !== "speed") return 0;
+  return Math.round(CONFIG.speedUpgradeBase * Math.pow(1.55, Math.max(0, level - 1)));
 }
 export function applyUpgrade(state, type) {
-  if (!Object.hasOwn(state.upgrades, type)) return { ok: false, cost: 0 };
-  const current = state.upgrades[type], cost = upgradeCost(type, current);
+  if (type !== "speed") return { ok: false, cost: 0 };
+  const current = state.upgrades.speed, cost = upgradeCost(type, current);
   if (state.coins < cost) return { ok: false, cost };
   state.coins -= cost;
-  state.upgrades[type] += 1;
-  if (type === "energy") {
-    state.maxEnergy += 5;
-    state.energy = Math.min(state.maxEnergy, state.energy + 5);
-  }
+  state.upgrades.speed += 1;
   return { ok: true, cost };
 }
 export function awardRun(state, meters) {
