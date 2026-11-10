@@ -1,6 +1,6 @@
 import { CONFIG } from "./config.js";
 const freshState = () => ({
-  version: 3, coins: CONFIG.startingCoins, xp: 0, level: 1,
+  version: 4, coins: CONFIG.startingCoins, xp: 0, level: 1,
   energy: CONFIG.startingEnergy, maxEnergy: CONFIG.maxEnergy,
   energyUpdatedAt: Date.now(),
   distance: 0, totalDistance: 0, record: 0, runs: 0,
@@ -35,7 +35,7 @@ export function loadGame() {
     const saved = JSON.parse(raw), base = freshState();
     const upgrades = { speed: Math.max(1, Number(saved.upgrades?.speed) || 1) };
     const state = {
-      ...base, ...saved, version: 3, upgrades,
+      ...base, ...saved, version: 4, upgrades,
       maxEnergy: CONFIG.maxEnergy,
       energy: Math.min(CONFIG.maxEnergy, Math.max(0, Number(saved.energy ?? CONFIG.startingEnergy))),
       energyUpdatedAt: Number(saved.energyUpdatedAt) || Number(saved.lastSaved) || Date.now(),
@@ -44,6 +44,11 @@ export function loadGame() {
       ownedItems: Array.isArray(saved.ownedItems) ? saved.ownedItems : base.ownedItems,
       equippedItems: Array.isArray(saved.equippedItems) ? saved.equippedItems : base.equippedItems
     };
+    // Recarga completa única para liberar testes após a atualização visual.
+    if ((Number(saved.version) || 1) < 4) {
+      state.energy = CONFIG.maxEnergy;
+      state.energyUpdatedAt = Date.now();
+    }
     syncEnergy(state);
     return state;
   } catch (error) {

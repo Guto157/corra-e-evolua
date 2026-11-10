@@ -6,51 +6,65 @@ function ellipse(x,y,rx,ry,fill,rotation=0){ctx.fillStyle=fill;ctx.beginPath();c
 function line(points,color,width){ctx.strokeStyle=color;ctx.lineWidth=width;ctx.lineCap="round";ctx.lineJoin="round";ctx.beginPath();ctx.moveTo(...points[0]);for(let i=1;i<points.length;i++)ctx.lineTo(...points[i]);ctx.stroke();}
 function gradient(x,y,x2,y2,stops){const g=ctx.createLinearGradient(x,y,x2,y2);for(const [p,c] of stops)g.addColorStop(p,c);return g;}
 function drawRunner(x,y,phase,female){
- const t=phase*1.8, a=Math.sin(t), b=Math.cos(t);
- const ink="#172b3d", accent=female?"#ec5b9b":"#23a7d5";
- ctx.save();ctx.translate(x,y+Math.abs(b)*2);ctx.scale(1.55,1.55);
- // sombra e pequenas linhas de velocidade
- ellipse(0,4,29,4,"#14283b55");
- ctx.globalAlpha=.5;
- line([[-48,-56],[-35,-56]],"#ffffff",2);
- line([[-43,-43],[-32,-43]],"#ffffff",1.6);
+ const swing=Math.sin(phase*1.9), lift=Math.max(0,Math.cos(phase*1.9));
+ const shirt=female?"#e95d9d":"#24a8d8";
+ const shorts=female?"#a93f79":"#176b9b";
+ const skin="#f2bd91", outline="#173047";
+ ctx.save();
+ ctx.translate(x,y+Math.abs(lift)*1.5);
+ ctx.scale(1.42,1.42);
+ // Sombra e movimento
+ ellipse(0,4,31,4,"#14283b55");
+ ctx.globalAlpha=.38;
+ line([[-43,-61],[-29,-61]],"#ffffff",2);
+ line([[-38,-49],[-27,-49]],"#ffffff",1.5);
  ctx.globalAlpha=1;
- // cabeça em perfil, olhando para a direita
- ellipse(8,-91,8,8,ink);
- // nariz curto para indicar o perfil
- line([[14,-91],[19,-88]],ink,2.5);
- // cabelo simples e rabo de cavalo opcional
+ // Perna de trás, com articulações arredondadas
+ const backKneeX=-8-swing*11, backKneeY=-24+Math.max(0,swing)*5;
+ line([[-3,-43],[backKneeX,backKneeY],[-15-swing*15,-4]],outline,7);
+ line([[-3,-43],[backKneeX,backKneeY],[-15-swing*15,-4]],shorts,4.2);
+ ellipse(backKneeX,backKneeY,3.2,3.2,skin);
+ line([[-15-swing*15,-4],[-24-swing*15,-2]],outline,5);
+ line([[-15-swing*15,-4],[-24-swing*15,-2]],"#f4f7fb",2.8);
+ // Perna da frente
+ const frontKneeX=7+swing*11, frontKneeY=-25-Math.max(0,-swing)*6;
+ line([[-3,-43],[frontKneeX,frontKneeY],[17+swing*15,-5]],outline,7.5);
+ line([[-3,-43],[frontKneeX,frontKneeY],[17+swing*15,-5]],shorts,4.5);
+ ellipse(frontKneeX,frontKneeY,3.3,3.3,skin);
+ line([[17+swing*15,-5],[28+swing*15,-3]],outline,5.5);
+ line([[17+swing*15,-5],[28+swing*15,-3]],"#f4f7fb",3);
+ // Tronco inclinado para a frente
+ ctx.fillStyle=shirt;
+ ctx.beginPath();
+ ctx.moveTo(1,-70);ctx.quadraticCurveTo(8,-68,8,-59);
+ ctx.lineTo(2,-43);ctx.quadraticCurveTo(-4,-40,-10,-45);
+ ctx.lineTo(-5,-62);ctx.quadraticCurveTo(-4,-68,1,-70);ctx.fill();
+ line([[1,-69],[-5,-48]],"#ffffff88",1.8);
+ // Braço de trás
+ const rearElbowX=-12+swing*8,rearElbowY=-58+Math.cos(phase*1.9)*5;
+ line([[0,-65],[rearElbowX,rearElbowY],[-17+swing*12,-45]],outline,6);
+ line([[0,-65],[rearElbowX,rearElbowY],[-17+swing*12,-45]],skin,3.5);
+ ellipse(rearElbowX,rearElbowY,2.8,2.8,skin);
+ // Braço da frente
+ const frontElbowX=12-swing*8,frontElbowY=-59-Math.cos(phase*1.9)*5;
+ line([[3,-66],[frontElbowX,frontElbowY],[19-swing*12,-48]],outline,6);
+ line([[3,-66],[frontElbowX,frontElbowY],[19-swing*12,-48]],skin,3.5);
+ ellipse(frontElbowX,frontElbowY,2.8,2.8,skin);
+ // Pescoço e cabeça em perfil
+ line([[1,-72],[3,-77]],skin,5);
+ ellipse(5,-87,9,10,skin);
+ // Cabelo e rosto, olhando para a direita
+ ctx.fillStyle=female?"#392b36":"#263343";
+ ctx.beginPath();
+ ctx.moveTo(-4,-88);ctx.quadraticCurveTo(-5,-99,5,-99);
+ ctx.quadraticCurveTo(14,-98,14,-89);
+ ctx.lineTo(9,-91);ctx.lineTo(4,-94);ctx.lineTo(-1,-91);ctx.closePath();ctx.fill();
  if(female){
-   line([[3,-98],[-3,-94],[-5,-85]],accent,3);
-   line([[-3,-94],[-10,-90],[-13,-82]],accent,2.5);
- }else{
-   line([[2,-98],[7,-101],[13,-98]],ink,2.5);
+   ellipse(-5,-88,3.5,7,"#392b36",-0.35);
+   line([[-4,-89],[-9,-84],[-10,-78]],"#392b36",3);
  }
- // tronco inclinado para frente
- line([[5,-81],[0,-57],[-2,-48]],ink,5.5);
- line([[3,-76],[1,-59]],accent,2.2);
- // quadril
- ellipse(-2,-48,3.5,3.5,ink);
- // perna de trás: quadril, joelho, tornozelo
- const bkx=-9-a*10,bky=-27+Math.max(0,-a)*10;
- line([[-2,-47],[bkx,bky],[-17-a*17,-5]],ink,4.5);
- ellipse(bkx,bky,2.2,2.2,accent);
- line([[-17-a*17,-5],[-8-a*17,-5]],ink,3.5);
- // perna da frente
- const fkx=8+a*10,fky=-28-Math.max(0,a)*10;
- line([[-2,-47],[fkx,fky],[15+a*18,-5]],ink,4.8);
- ellipse(fkx,fky,2.3,2.3,accent);
- line([[15+a*18,-5],[26+a*18,-5]],ink,3.8);
- // braços em oposição às pernas
- const rearX=-12+a*9,rearY=-65-b*7;
- line([[2,-75],[rearX,rearY],[-16+a*12,-53-b*7]],ink,4);
- ellipse(rearX,rearY,2,2,accent);
- const frontX=14-a*9,frontY=-64+b*7;
- line([[3,-75],[frontX,frontY],[20-a*12,-53+b*7]],ink,4);
- ellipse(frontX,frontY,2,2,accent);
- // tênis minimalistas
- line([[-9-a*17,-5],[-3-a*17,-3]],accent,2.5);
- line([[25+a*18,-5],[31+a*18,-3]],accent,2.5);
+ ellipse(10,-86,1.1,1.1,"#263343");
+ line([[12,-82],[15,-82]],"#b86f63",1);
  ctx.restore();
 }
 function drawCity(w,ground,phase){
