@@ -23,7 +23,7 @@ function drawRunner(x,y,phase,female){
  // Tronco inclinado para frente
  line([[2,-82],[-2,-52]],ink,4);
  // Quadril e ombros
- ellipse([-2,-52][0],[-2,-52][1],2.4,2.4,accent);
+ ellipse(-2,-52,2.4,2.4,accent);
  // Pernas alternadas com joelhos bem definidos
  const stride=22;
  const frontHip=-2, hipY=-52;
@@ -36,7 +36,7 @@ function drawRunner(x,y,phase,female){
  const backFootX=backKneeX-10-s*stride*.55;
  const backFootY=-4+Math.max(0,c)*4;
  line([[frontHip,hipY],[frontKneeX,frontKneeY],[frontFootX,frontFootY]],ink,3.1);
- line([[backHip=frontHip,hipY],[backKneeX,backKneeY],[backFootX,backFootY]],ink,3.1);
+ line([[frontHip,hipY],[backKneeX,backKneeY],[backFootX,backFootY]],ink,3.1);
  ellipse(frontKneeX,frontKneeY,2,2,accent);
  ellipse(backKneeX,backKneeY,2,2,accent);
  line([[frontFootX,frontFootY],[frontFootX+9,frontFootY]],accent,3.2);
