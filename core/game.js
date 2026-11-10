@@ -8,13 +8,13 @@ export class RunningGame {
     this.player = createPlayer(state);
     this.running = false;
     this.distance = 0;
-    this.energy = state.energy;
+    this.elapsed = 0;
     this.frame = 0;
     this.lastTime = 0;
     this.raf = 0;
   }
   start() {
-    if (this.running || this.energy <= 0) return false;
+    if (this.running || this.state.energy < 1) return false;
     this.running = true;
     this.lastTime = 0;
     this.callbacks.onStart?.();
@@ -26,11 +26,11 @@ export class RunningGame {
     const dt = this.lastTime ? Math.min((time - this.lastTime) / 1000, 0.05) : 0;
     this.lastTime = time;
     const speed = CONFIG.baseRunSpeed * this.player.speedMultiplier;
+    this.elapsed += dt;
     this.distance += speed * dt;
-    this.energy = Math.max(0, this.energy - CONFIG.energyDrainPerSecond * this.player.staminaMultiplier * dt);
     this.frame += dt * 10;
-    this.callbacks.onFrame?.({ distance: this.distance, energy: this.energy, speed, frame: this.frame });
-    if (this.energy <= 0) return this.finish();
+    this.callbacks.onFrame?.({ distance: this.distance, energy: this.state.energy, speed, frame: this.frame, progress: Math.min(1, this.elapsed / CONFIG.runDurationSeconds) });
+    if (this.elapsed >= CONFIG.runDurationSeconds) return this.finish();
     this.raf = requestAnimationFrame(t => this.tick(t));
   }
   finish() {
@@ -38,7 +38,6 @@ export class RunningGame {
     this.running = false;
     cancelAnimationFrame(this.raf);
     const reward = awardRun(this.state, this.distance);
-    this.state.energy = 0;
     this.callbacks.onFinish?.(reward);
   }
   dispose() { this.running = false; cancelAnimationFrame(this.raf); }
