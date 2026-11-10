@@ -6,65 +6,51 @@ function ellipse(x,y,rx,ry,fill,rotation=0){ctx.fillStyle=fill;ctx.beginPath();c
 function line(points,color,width){ctx.strokeStyle=color;ctx.lineWidth=width;ctx.lineCap="round";ctx.lineJoin="round";ctx.beginPath();ctx.moveTo(...points[0]);for(let i=1;i<points.length;i++)ctx.lineTo(...points[i]);ctx.stroke();}
 function gradient(x,y,x2,y2,stops){const g=ctx.createLinearGradient(x,y,x2,y2);for(const [p,c] of stops)g.addColorStop(p,c);return g;}
 function drawRunner(x,y,phase,female){
- const t=phase*1.55, swing=Math.sin(t), lift=Math.cos(t);
- const skin="#d99a73", skinHi="#efb28e", hair=female?"#39243a":"#30251f";
- const shirt=female?"#e84f91":"#1688cf", shirtDark=female?"#a92f68":"#105789";
- const shorts=female?"#6e3158":"#243d58";
- ctx.save();ctx.translate(x,y+Math.abs(lift)*2);ctx.scale(1.48,1.48);
- // sombra no chão e rastro de velocidade
- ellipse(0,5,35,5,"#14283b55");
- ctx.globalAlpha=.42;
- for(let i=0;i<3;i++)line([[-58-i*5,-72+i*13],[-43-i*5,-72+i*13]],"#f7ffff",2-i*.35);
+ const t=phase*1.8, a=Math.sin(t), b=Math.cos(t);
+ const ink="#172b3d", accent=female?"#ec5b9b":"#23a7d5";
+ ctx.save();ctx.translate(x,y+Math.abs(b)*2);ctx.scale(1.55,1.55);
+ // sombra e pequenas linhas de velocidade
+ ellipse(0,4,29,4,"#14283b55");
+ ctx.globalAlpha=.5;
+ line([[-48,-56],[-35,-56]],"#ffffff",2);
+ line([[-43,-43],[-32,-43]],"#ffffff",1.6);
  ctx.globalAlpha=1;
- // perna de trás, com articulação e canela
- const backHip=-2, backKneeX=-5-swing*13, backKneeY=-31+Math.max(0,-swing)*13;
- line([[backHip,-39],[backKneeX,backKneeY],[-19-swing*24,-8]],"#243449",11);
- line([[backHip,-39],[backKneeX,backKneeY],[-19-swing*24,-8]],"#d58f6d",7);
- ctx.save();ctx.translate(-19-swing*24,-8);ctx.rotate(-.18+swing*.32);
- rounded(-4,-5,22,8,4,"#f6f7f8");rounded(1,-9,13,5,2,female?"#d94b88":"#1977b8");
- line([[3,-5],[9,-2],[15,-5]],"#d6efff",1.4);ctx.restore();
- // perna da frente
- const kneeX=10+swing*14,kneeY=-29-Math.max(0,swing)*13;
- line([[2,-40],[kneeX,kneeY],[17+swing*25,-7]],"#26364c",12);
- line([[2,-40],[kneeX,kneeY],[17+swing*25,-7]],"#e0a17d",7.5);
- ctx.save();ctx.translate(17+swing*25,-7);ctx.rotate(.12-swing*.3);
- ellipse(5,2,12,4,"#142b40");rounded(-2,-5,23,8,4,"#fff");rounded(3,-9,15,5,2,female?"#e34d91":"#1688cf");
- line([[4,-5],[11,-2],[17,-5]],"#b8e7ff",1.5);ctx.restore();
- // shorts e quadril
- ctx.fillStyle=shorts;ctx.beginPath();ctx.moveTo(-10,-48);ctx.quadraticCurveTo(0,-53,12,-45);ctx.lineTo(11,-33);ctx.quadraticCurveTo(2,-28,-9,-34);ctx.closePath();ctx.fill();
+ // cabeça em perfil, olhando para a direita
+ ellipse(8,-91,8,8,ink);
+ // nariz curto para indicar o perfil
+ line([[14,-91],[19,-88]],ink,2.5);
+ // cabelo simples e rabo de cavalo opcional
+ if(female){
+   line([[3,-98],[-3,-94],[-5,-85]],accent,3);
+   line([[-3,-94],[-10,-90],[-13,-82]],accent,2.5);
+ }else{
+   line([[2,-98],[7,-101],[13,-98]],ink,2.5);
+ }
  // tronco inclinado para frente
- ctx.save();ctx.translate(0,-62);ctx.rotate(-.13);
- ctx.fillStyle=shirtDark;ctx.beginPath();ctx.moveTo(-12,-15);ctx.quadraticCurveTo(-8,-23,4,-22);ctx.quadraticCurveTo(15,-18,16,-3);ctx.lineTo(10,13);ctx.quadraticCurveTo(-2,18,-14,9);ctx.closePath();ctx.fill();
- ctx.fillStyle=shirt;ctx.beginPath();ctx.moveTo(-9,-16);ctx.quadraticCurveTo(-5,-21,4,-19);ctx.quadraticCurveTo(12,-16,12,-3);ctx.lineTo(7,10);ctx.quadraticCurveTo(-2,14,-10,7);ctx.closePath();ctx.fill();
- // costura e faixa lateral da roupa
- line([[7,-12],[9,7]],"#ffffff75",1.5);
- // braço de trás, cotovelo acompanha a passada
- const rearElbowX=-17+swing*10,rearElbowY=-8+lift*5;
- line([[-8,-13],[rearElbowX,rearElbowY],[-24+swing*14,-21-lift*5]],shirtDark,9);
- line([[-8,-13],[rearElbowX,rearElbowY],[-24+swing*14,-21-lift*5]],skin,5.5);
- ellipse(-24+swing*14,-21-lift*5,3.5,4,skin);
- // braço da frente
- const armX=17-swing*10,armY=-7-lift*5;
- line([[9,-13],[armX,armY],[23-swing*14,-20+lift*5]],shirtDark,9);
- line([[9,-13],[armX,armY],[23-swing*14,-20+lift*5]],skinHi,5.5);
- ellipse(23-swing*14,-20+lift*5,3.5,4,skinHi);
- ctx.restore();
- // pescoço, cabeça e rosto de perfil voltado para a direita
- rounded(2,-82,9,15,3,skin);
- ellipse(7,-96,11,13,skinHi,-.12);
- ctx.beginPath();ctx.moveTo(14,-99);ctx.lineTo(22,-94);ctx.lineTo(15,-90);ctx.closePath();ctx.fillStyle=skinHi;ctx.fill();
- ellipse(16,-91,2,1.5,"#bd795e");
- // orelha e cabelo
- ellipse(-1,-96,3.2,4,skin);
- ctx.fillStyle=hair;ctx.beginPath();ctx.moveTo(-4,-97);ctx.quadraticCurveTo(-8,-116,7,-116);ctx.quadraticCurveTo(21,-115,19,-99);ctx.quadraticCurveTo(14,-105,8,-105);ctx.quadraticCurveTo(3,-100,1,-91);ctx.lineTo(-5,-88);ctx.closePath();ctx.fill();
- if(female){ctx.fillStyle=hair;ctx.beginPath();ctx.moveTo(-3,-101);ctx.quadraticCurveTo(-14,-89,-8,-72);ctx.quadraticCurveTo(0,-79,1,-96);ctx.fill();ctx.fillStyle="#ff9cc7";ctx.beginPath();ctx.arc(5,-112,3,0,TAU);ctx.fill();}
- else {ctx.fillStyle="#725039";ctx.beginPath();ctx.moveTo(2,-113);ctx.quadraticCurveTo(10,-121,17,-111);ctx.lineTo(9,-108);ctx.fill();}
- // olho, sobrancelha e expressão focada
- ellipse(13,-99,1.4,1.8,"#202c3b");
- line([[11,-104],[15,-105]],"#51382f",1.3);
- line([[17,-85],[20,-84]],"#a75d50",1);
- // relógio esportivo
- rounded(armX-1,armY-1,5,3,1,"#f4d16c");
+ line([[5,-81],[0,-57],[-2,-48]],ink,5.5);
+ line([[3,-76],[1,-59]],accent,2.2);
+ // quadril
+ ellipse(-2,-48,3.5,3.5,ink);
+ // perna de trás: quadril, joelho, tornozelo
+ const bkx=-9-a*10,bky=-27+Math.max(0,-a)*10;
+ line([[-2,-47],[bkx,bky],[-17-a*17,-5]],ink,4.5);
+ ellipse(bkx,bky,2.2,2.2,accent);
+ line([[-17-a*17,-5],[-8-a*17,-5]],ink,3.5);
+ // perna da frente
+ const fkx=8+a*10,fky=-28-Math.max(0,a)*10;
+ line([[-2,-47],[fkx,fky],[15+a*18,-5]],ink,4.8);
+ ellipse(fkx,fky,2.3,2.3,accent);
+ line([[15+a*18,-5],[26+a*18,-5]],ink,3.8);
+ // braços em oposição às pernas
+ const rearX=-12+a*9,rearY=-65-b*7;
+ line([[2,-75],[rearX,rearY],[-16+a*12,-53-b*7]],ink,4);
+ ellipse(rearX,rearY,2,2,accent);
+ const frontX=14-a*9,frontY=-64+b*7;
+ line([[3,-75],[frontX,frontY],[20-a*12,-53+b*7]],ink,4);
+ ellipse(frontX,frontY,2,2,accent);
+ // tênis minimalistas
+ line([[-9-a*17,-5],[-3-a*17,-3]],accent,2.5);
+ line([[25+a*18,-5],[31+a*18,-3]],accent,2.5);
  ctx.restore();
 }
 function drawCity(w,ground,phase){

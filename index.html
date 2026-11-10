@@ -15,6 +15,8 @@
   <a class="brand" href="./"><span class="brand-mark">↗</span><span>CORRA <b>E EVOLUA</b><small>SUA JORNADA COMEÇA AGORA</small></span></a>
   <button class="icon-button" id="soundButton" aria-label="Ativar ou desativar som">♫</button>
 </header>
+  <div class="energy-row energy-top"><div><span>ENERGIA</span><b><span class="energy-bolt">⚡</span><strong id="energyValue">15 / 15</strong></b></div><div class="energy-track"><i id="energyBar"></i></div><small class="energy-timer" id="energyTimer">Energia completa</small></div>
+
 <main>
 <section class="hero-row">
   <div><p class="eyebrow">PAINEL DO CORREDOR</p><h1>Vamos evoluir?</h1><p class="muted">Cada corrida é um passo a mais.</p></div>
@@ -31,7 +33,7 @@
     <canvas id="gameCanvas" aria-label="Personagem correndo em uma pista lateral"></canvas>
     <div class="track-overlay"><span id="distanceValue">0 m</span><span id="speedValue">0 km/h</span></div>
   </div>
-  <div class="energy-row"><div><span>⚡ Energia para corridas</span><b id="energyValue">15 / 15</b></div><div class="energy-track"><i id="energyBar"></i></div><small class="energy-timer" id="energyTimer">Energia completa</small></div>
+
   <div class="run-actions"><button class="primary-button" id="runButton">▶ Iniciar corrida</button></div>
   <p class="hint" id="runHint">Cada corrida consome 1 energia. Uma energia é recuperada automaticamente a cada 5 minutos.</p>
 </section>
