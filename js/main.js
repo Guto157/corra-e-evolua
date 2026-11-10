@@ -1,4 +1,5 @@
-import { loadGame, saveGame } from "../core/save.js";
+import { loadGame, saveGame, syncEnergy } from "../core/save.js";
+import { CONFIG } from "../core/config.js";
 import { RunningGame } from "../core/game.js";
 import { applyUpgrade, upgradeCost } from "../core/economy.js";
 import { ITEMS, buyOrEquipItem } from "../core/items.js";
@@ -11,6 +12,13 @@ function toast(message) {
   clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove("show"), 2600);
 }
 function fmt(n) { return Math.floor(n).toLocaleString("pt-BR"); }
+function energyCountdown() {
+  if (state.energy >= CONFIG.maxEnergy) return "Energia completa";
+  const remaining = Math.max(0, CONFIG.energyRechargeMs - (Date.now() - state.energyUpdatedAt));
+  const minutes = Math.floor(remaining / 60000);
+  const seconds = Math.floor((remaining % 60000) / 1000);
+  return `Próxima energia em ${String(minutes).padStart(2,"0")}:${String(seconds).padStart(2,"0")}`;
+}
 function renderItems() {
   const list=$("itemsList");
   list.innerHTML="";
@@ -31,68 +39,65 @@ function renderItems() {
   }
 }
 function render() {
+  syncEnergy(state);
   $("coinsValue").textContent=fmt(state.coins);
   $("xpValue").textContent=`${fmt(state.xp)} / ${state.level*100}`;
   $("levelValue").textContent=state.level;
   $("recordValue").textContent=`${fmt(state.record)} m`;
-  $("energyValue").textContent=`${Math.ceil(state.energy)} / ${state.maxEnergy}`;
-  $("energyBar").style.width=`${Math.max(0,state.energy/state.maxEnergy*100)}%`;
+  $("energyValue").textContent=`${state.energy} / ${CONFIG.maxEnergy}`;
+  $("energyBar").style.width=`${state.energy/CONFIG.maxEnergy*100}%`;
+  $("energyTimer").textContent=energyCountdown();
   $("totalDistance").textContent=`${fmt(state.totalDistance)} m`;
   $("runsValue").textContent=fmt(state.runs);
-  $("maxEnergy").textContent=fmt(state.maxEnergy);
-  $("energyLevel").textContent=`Nível ${state.upgrades.energy} · ${state.maxEnergy} pontos`;
+  $("maxEnergy").textContent=CONFIG.maxEnergy;
   $("speedLevel").textContent=`Nível ${state.upgrades.speed} · +12% por nível`;
-  $("staminaLevel").textContent=`Nível ${state.upgrades.stamina} · consumo reduzido`;
-  for(const type of ["energy","speed","stamina"]){
-    const btn=$(`buy${type[0].toUpperCase()+type.slice(1)}`),cost=upgradeCost(type,state.upgrades[type]);
-    btn.textContent=`Melhorar · ${cost} 🪙`;btn.disabled=running||state.coins<cost;
-  }
-  $("runButton").disabled=running||state.energy<=0;
-  $("recoverButton").disabled=running||state.energy>=state.maxEnergy;
+  const speedButton=$("buySpeed"),cost=upgradeCost("speed",state.upgrades.speed);
+  speedButton.textContent=`Melhorar · ${cost} 🪙`;
+  speedButton.disabled=running||state.coins<cost;
+  $("runButton").disabled=running||state.energy<1;
+  $("runButton").textContent=running?"Correndo...":state.energy<1?"Aguardando energia":"▶ Iniciar corrida";
   document.querySelectorAll("[data-character]").forEach(b=>{
     b.classList.toggle("active",b.dataset.character===state.character);b.disabled=running;
   });
   renderItems();
 }
 function finish(reward){
-  running=false;state.energy=0;
+  running=false;
   $("runStatus").textContent="CONCLUÍDA";
-  $("runHint").textContent=`Você percorreu ${reward.distance} m e ganhou ${reward.coins} moedas e ${reward.xp} XP.`;
-  $("runButton").textContent="⚡ Energia esgotada";
+  $("runHint").textContent=`Você percorreu ${reward.distance} m e ganhou ${reward.coins} moedas e ${reward.xp} XP. Pode iniciar outra corrida quando quiser.`;
   toast(`Corrida concluída! +${reward.coins} moedas · +${reward.xp} XP${reward.leveled?" · Subiu de nível!":""}`);
   saveGame(state);render();
 }
 function startRun(){
-  if(state.energy<=0){toast("Recupere sua energia para correr novamente.");return;}
+  syncEnergy(state);
+  if(state.energy<1){render();toast("Você está sem energia. Aguarde a recarga automática.");return;}
   game?.dispose();
+  const wasFull=state.energy>=CONFIG.maxEnergy;
+  state.energy-=1;
+  if(wasFull)state.energyUpdatedAt=Date.now();
+  saveGame(state);
   game=new RunningGame(state,{
-    onStart:()=>{running=true;$("runStatus").textContent="CORRENDO";$("runButton").textContent="Correndo...";$("runHint").textContent="Seu corredor está em movimento. Acompanhe a distância!";render();},
+    onStart:()=>{running=true;$("runStatus").textContent="CORRENDO";$("runHint").textContent="Corrida em andamento. A distância depende da velocidade e dos itens equipados.";render();},
     onFrame:data=>{
       $("distanceValue").textContent=`${fmt(data.distance)} m`;
       $("speedValue").textContent=`${Math.round(data.speed*3.6)} km/h`;
-      $("energyValue").textContent=`${Math.ceil(data.energy)} / ${state.maxEnergy}`;
-      $("energyBar").style.width=`${Math.max(0,data.energy/state.maxEnergy*100)}%`;
+      $("energyValue").textContent=`${state.energy} / ${CONFIG.maxEnergy}`;
+      $("energyBar").style.width=`${state.energy/CONFIG.maxEnergy*100}%`;
+      $("energyTimer").textContent=energyCountdown();
       drawScene(data);
-    },onFinish:finish
+    },
+    onFinish:finish
   });
-  game.start();
+  if(!game.start()){
+    state.energy=Math.min(CONFIG.maxEnergy,state.energy+1);saveGame(state);render();
+  }
 }
 $("runButton").addEventListener("click",startRun);
-$("recoverButton").addEventListener("click",()=>{
-  if(running||state.energy>=state.maxEnergy)return;
-  const recovered=Math.min(state.maxEnergy-state.energy, state.maxEnergy);
-  state.energy+=recovered;saveGame(state);render();
-  toast(`+${Math.ceil(recovered)} pontos de energia recuperados.`);
-  $("runStatus").textContent="PRONTO";$("runButton").textContent="▶ Iniciar corrida";
-  $("runHint").textContent="Energia recuperada. Prepare-se para uma nova corrida.";
+$("buySpeed").addEventListener("click",()=>{
+  const result=applyUpgrade(state,"speed");
+  if(!result.ok)return toast("Moedas insuficientes para essa melhoria.");
+  saveGame(state);render();toast("Melhoria de distância comprada!");
 });
-for(const type of ["energy","speed","stamina"]){
-  $(`buy${type[0].toUpperCase()+type.slice(1)}`).addEventListener("click",()=>{
-    const result=applyUpgrade(state,type);
-    if(!result.ok)return toast("Moedas insuficientes para essa melhoria.");
-    saveGame(state);render();toast("Melhoria comprada com sucesso!");
-  });
-}
 document.querySelectorAll("[data-character]").forEach(button=>button.addEventListener("click",()=>{
   if(running)return;
   state.character=button.dataset.character;
@@ -104,3 +109,13 @@ window.addEventListener("beforeunload",()=>{game?.dispose();saveGame(state);});
 document.documentElement.dataset.character=state.character;window.currentRunner=state.character;
 $("distanceValue").textContent="0 m";
 render();drawScene({frame:0});
+setInterval(()=>{
+  const before=state.energy;
+  syncEnergy(state);
+  if(state.energy!==before)saveGame(state);
+  $("energyValue").textContent=`${state.energy} / ${CONFIG.maxEnergy}`;
+  $("energyBar").style.width=`${state.energy/CONFIG.maxEnergy*100}%`;
+  $("energyTimer").textContent=energyCountdown();
+  if(!running)$("runButton").disabled=state.energy<1;
+  if(!running&&state.energy>0)$("runButton").textContent="▶ Iniciar corrida";
+},1000);
