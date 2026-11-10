@@ -1,30 +1,51 @@
 import { CONFIG } from "./config.js";
 const freshState = () => ({
-  version: 2, coins: CONFIG.startingCoins, xp: 0, level: 1,
-  energy: CONFIG.startingEnergy, maxEnergy: CONFIG.startingEnergy,
+  version: 3, coins: CONFIG.startingCoins, xp: 0, level: 1,
+  energy: CONFIG.startingEnergy, maxEnergy: CONFIG.maxEnergy,
+  energyUpdatedAt: Date.now(),
   distance: 0, totalDistance: 0, record: 0, runs: 0,
   character: "male",
-  upgrades: { energy: 1, speed: 1, stamina: 1 },
+  upgrades: { speed: 1 },
   ownedItems: ["basic-shoes"],
   equippedItems: ["basic-shoes"],
   lastSaved: Date.now()
 });
+export function syncEnergy(state, now = Date.now()) {
+  state.maxEnergy = CONFIG.maxEnergy;
+  state.energy = Math.min(CONFIG.maxEnergy, Math.max(0, Number(state.energy) || 0));
+  let updatedAt = Number(state.energyUpdatedAt) || now;
+  if (state.energy >= CONFIG.maxEnergy) {
+    state.energy = CONFIG.maxEnergy;
+    state.energyUpdatedAt = now;
+    return 0;
+  }
+  const elapsed = Math.max(0, now - updatedAt);
+  const recovered = Math.min(CONFIG.maxEnergy - state.energy, Math.floor(elapsed / CONFIG.energyRechargeMs));
+  if (recovered > 0) {
+    state.energy += recovered;
+    updatedAt += recovered * CONFIG.energyRechargeMs;
+  }
+  state.energyUpdatedAt = updatedAt;
+  return recovered;
+}
 export function loadGame() {
   try {
     const raw = localStorage.getItem(CONFIG.saveKey);
     if (!raw) return freshState();
     const saved = JSON.parse(raw), base = freshState();
-    const upgrades = { ...base.upgrades, ...(saved.upgrades || {}) };
-    const maxEnergy = CONFIG.startingEnergy + Math.max(0, upgrades.energy - 1) * 5;
-    return {
-      ...base, ...saved, version: 2, upgrades,
-      maxEnergy,
-      energy: Math.min(maxEnergy, Math.max(0, Number(saved.energy ?? CONFIG.startingEnergy))),
+    const upgrades = { speed: Math.max(1, Number(saved.upgrades?.speed) || 1) };
+    const state = {
+      ...base, ...saved, version: 3, upgrades,
+      maxEnergy: CONFIG.maxEnergy,
+      energy: Math.min(CONFIG.maxEnergy, Math.max(0, Number(saved.energy ?? CONFIG.startingEnergy))),
+      energyUpdatedAt: Number(saved.energyUpdatedAt) || Number(saved.lastSaved) || Date.now(),
       coins: Math.max(0, Number(saved.coins) || 0),
       xp: Math.max(0, Number(saved.xp) || 0),
       ownedItems: Array.isArray(saved.ownedItems) ? saved.ownedItems : base.ownedItems,
       equippedItems: Array.isArray(saved.equippedItems) ? saved.equippedItems : base.equippedItems
     };
+    syncEnergy(state);
+    return state;
   } catch (error) {
     console.warn("Não foi possível carregar o progresso salvo.", error);
     return freshState();
