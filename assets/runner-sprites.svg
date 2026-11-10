@@ -1,0 +1,696 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="320" viewBox="0 0 1024 320">
+<defs>
+ <linearGradient id="shirt" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#62e4dc"/><stop offset=".55" stop-color="#159fc4"/><stop offset="1" stop-color="#12618e"/></linearGradient>
+ <linearGradient id="pink" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff9bc9"/><stop offset=".55" stop-color="#e84e98"/><stop offset="1" stop-color="#9f286c"/></linearGradient>
+ <linearGradient id="skin" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe2c6"/><stop offset="1" stop-color="#d99a72"/></linearGradient>
+ <linearGradient id="pants" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#425c79"/><stop offset="1" stop-color="#182b43"/></linearGradient>
+ <linearGradient id="shoe" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#a9d6e6"/></linearGradient>
+ <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.2"/></filter>
+</defs><g transform="translate(0 0)">
+ <ellipse cx="64" cy="146" rx="27" ry="5" fill="#12283b" opacity=".17" filter="url(#shadow)"/>
+ <!-- perna de trás -->
+ <g transform="translate(62 94) rotate(2.9979353643127203e-15)">
+  <path d="M0 0 Q-4 20 -8 37 L-12 52" fill="none" stroke="#142a40" stroke-width="13" stroke-linecap="round"/>
+  <path d="M0 0 Q-4 20 -8 37 L-12 52" fill="none" stroke="url(#pants)" stroke-width="9" stroke-linecap="round"/>
+  <path d="M-12 51 Q-20 52 -22 59 Q-12 63 3 59 L5 55 Q-2 51 -12 51" fill="url(#shoe)" stroke="#183149" stroke-width="2"/>
+  <path d="M-17 58 L1 58" stroke="#18a9c2" stroke-width="2.5" stroke-linecap="round"/>
+ </g>
+ <!-- braço de trás -->
+ <g transform="translate(57 56) rotate(-3.3065463576978537e-15)">
+  <path d="M0 0 Q-10 14 -12 27 L-8 39" fill="none" stroke="#173149" stroke-width="11" stroke-linecap="round"/>
+  <path d="M0 0 Q-10 14 -12 27 L-8 39" fill="none" stroke="url(#shirt)" stroke-width="7.5" stroke-linecap="round"/>
+  <path d="M-8 37 L-5 46" stroke="url(#skin)" stroke-width="6" stroke-linecap="round"/>
+ </g>
+ <!-- tronco -->
+ <path d="M49 48 Q59 43 72 48 L78 88 Q67 98 51 91 L43 62Z" fill="url(#shirt)" stroke="#173149" stroke-width="2.5"/>
+ <path d="M54 53 Q64 57 73 54" fill="none" stroke="#ffffff" stroke-width="2" opacity=".55"/>
+ <path d="M61 60 L64 87" stroke="#ffffff" stroke-width="1.5" opacity=".25"/>
+ <!-- braço da frente -->
+ <g transform="translate(73 56) rotate(0)">
+  <path d="M0 0 Q11 13 12 27 L8 39" fill="none" stroke="#173149" stroke-width="12" stroke-linecap="round"/>
+  <path d="M0 0 Q11 13 12 27 L8 39" fill="none" stroke="url(#shirt)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M8 37 L5 46" stroke="url(#skin)" stroke-width="6.5" stroke-linecap="round"/>
+  <path d="M5 45 Q1 47 3 52" fill="none" stroke="url(#skin)" stroke-width="5" stroke-linecap="round"/>
+ </g>
+ <!-- perna da frente -->
+ <g transform="translate(62 92) rotate(0)">
+  <path d="M0 0 Q5 19 9 37 L14 52" fill="none" stroke="#142a40" stroke-width="14" stroke-linecap="round"/>
+  <path d="M0 0 Q5 19 9 37 L14 52" fill="none" stroke="url(#pants)" stroke-width="9.5" stroke-linecap="round"/>
+  <path d="M13 50 Q20 49 25 56 Q24 62 4 60 L1 56 Q5 51 13 50" fill="url(#shoe)" stroke="#183149" stroke-width="2"/>
+  <path d="M7 58 L23 58" stroke="#18a9c2" stroke-width="2.5" stroke-linecap="round"/>
+ </g>
+ <!-- pescoço e cabeça -->
+ <path d="M58 43 L58 51 Q65 56 70 49 L68 40Z" fill="url(#skin)"/>
+ <ellipse cx="65" cy="29" rx="13" ry="16" fill="url(#skin)" stroke="#553d38" stroke-width="1.3"/>
+ <path d="M52 27 Q49 10 64 10 Q79 10 79 27 L75 23 Q69 19 61 22 L55 31Z" fill="#26394b"/>
+ <path d="M53 24 Q54 15 64 14 Q73 13 78 22 L74 20 L68 22 L61 19 L56 27Z" fill="#1b2a3c"/>
+ <ellipse cx="71" cy="29" rx="1.6" ry="1.8" fill="#263444"/>
+ <path d="M76 33 L80 35 L76 37" fill="none" stroke="#b8755d" stroke-width="1.3" stroke-linecap="round"/>
+ <path d="M62 42 Q68 45 73 41" fill="none" stroke="#bd8066" stroke-width="1" opacity=".7"/>
+ <path d="M48 62 L43 79" stroke="#ffffff" stroke-width="2" opacity=".35" stroke-linecap="round"/>
+ </g>
+<g transform="translate(128 0)">
+ <ellipse cx="64" cy="146" rx="27" ry="5" fill="#12283b" opacity=".17" filter="url(#shadow)"/>
+ <!-- perna de trás -->
+ <g transform="translate(62 94) rotate(-17.309974003446683)">
+  <path d="M0 0 Q-4 20 -8 37 L-12 52" fill="none" stroke="#142a40" stroke-width="13" stroke-linecap="round"/>
+  <path d="M0 0 Q-4 20 -8 37 L-12 52" fill="none" stroke="url(#pants)" stroke-width="9" stroke-linecap="round"/>
+  <path d="M-12 51 Q-20 52 -22 59 Q-12 63 3 59 L5 55 Q-2 51 -12 51" fill="url(#shoe)" stroke="#183149" stroke-width="2"/>
+  <path d="M-17 58 L1 58" stroke="#18a9c2" stroke-width="2.5" stroke-linecap="round"/>
+ </g>
+ <!-- braço de trás -->
+ <g transform="translate(57 56) rotate(19.09188309203678)">
+  <path d="M0 0 Q-10 14 -12 27 L-8 39" fill="none" stroke="#173149" stroke-width="11" stroke-linecap="round"/>
+  <path d="M0 0 Q-10 14 -12 27 L-8 39" fill="none" stroke="url(#shirt)" stroke-width="7.5" stroke-linecap="round"/>
+  <path d="M-8 37 L-5 46" stroke="url(#skin)" stroke-width="6" stroke-linecap="round"/>
+ </g>
+ <!-- tronco -->
+ <path d="M49 48 Q59 43 72 48 L78 88 Q67 98 51 91 L43 62Z" fill="url(#shirt)" stroke="#173149" stroke-width="2.5"/>
+ <path d="M54 53 Q64 57 73 54" fill="none" stroke="#ffffff" stroke-width="2" opacity=".55"/>
+ <path d="M61 60 L64 87" stroke="#ffffff" stroke-width="1.5" opacity=".25"/>
+ <!-- braço da frente -->
+ <g transform="translate(73 56) rotate(-19.09188309203678)">
+  <path d="M0 0 Q11 13 12 27 L8 39" fill="none" stroke="#173149" stroke-width="12" stroke-linecap="round"/>
+  <path d="M0 0 Q11 13 12 27 L8 39" fill="none" stroke="url(#shirt)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M8 37 L5 46" stroke="url(#skin)" stroke-width="6.5" stroke-linecap="round"/>
+  <path d="M5 45 Q1 47 3 52" fill="none" stroke="url(#skin)" stroke-width="5" stroke-linecap="round"/>
+ </g>
+ <!-- perna da frente -->
+ <g transform="translate(62 92) rotate(17.309974003446683)">
+  <path d="M0 0 Q5 19 9 37 L14 52" fill="none" stroke="#142a40" stroke-width="14" stroke-linecap="round"/>
+  <path d="M0 0 Q5 19 9 37 L14 52" fill="none" stroke="url(#pants)" stroke-width="9.5" stroke-linecap="round"/>
+  <path d="M13 50 Q20 49 25 56 Q24 62 4 60 L1 56 Q5 51 13 50" fill="url(#shoe)" stroke="#183149" stroke-width="2"/>
+  <path d="M7 58 L23 58" stroke="#18a9c2" stroke-width="2.5" stroke-linecap="round"/>
+ </g>
+ <!-- pescoço e cabeça -->
+ <path d="M58 43 L58 51 Q65 56 70 49 L68 40Z" fill="url(#skin)"/>
+ <ellipse cx="65" cy="29" rx="13" ry="16" fill="url(#skin)" stroke="#553d38" stroke-width="1.3"/>
+ <path d="M52 27 Q49 10 64 10 Q79 10 79 27 L75 23 Q69 19 61 22 L55 31Z" fill="#26394b"/>
+ <path d="M53 24 Q54 15 64 14 Q73 13 78 22 L74 20 L68 22 L61 19 L56 27Z" fill="#1b2a3c"/>
+ <ellipse cx="71" cy="29" rx="1.6" ry="1.8" fill="#263444"/>
+ <path d="M76 33 L80 35 L76 37" fill="none" stroke="#b8755d" stroke-width="1.3" stroke-linecap="round"/>
+ <path d="M62 42 Q68 45 73 41" fill="none" stroke="#bd8066" stroke-width="1" opacity=".7"/>
+ <path d="M48 62 L43 79" stroke="#ffffff" stroke-width="2" opacity=".35" stroke-linecap="round"/>
+ </g>
+<g transform="translate(256 0)">
+ <ellipse cx="64" cy="146" rx="27" ry="5" fill="#12283b" opacity=".17" filter="url(#shadow)"/>
+ <!-- perna de trás -->
+ <g transform="translate(62 94) rotate(-24.48)">
+  <path d="M0 0 Q-4 20 -8 37 L-12 52" fill="none" stroke="#142a40" stroke-width="13" stroke-linecap="round"/>
+  <path d="M0 0 Q-4 20 -8 37 L-12 52" fill="none" stroke="url(#pants)" stroke-width="9" stroke-linecap="round"/>
+  <path d="M-12 51 Q-20 52 -22 59 Q-12 63 3 59 L5 55 Q-2 51 -12 51" fill="url(#shoe)" stroke="#183149" stroke-width="2"/>
+  <path d="M-17 58 L1 58" stroke="#18a9c2" stroke-width="2.5" stroke-linecap="round"/>
+ </g>
+ <!-- braço de trás -->
+ <g transform="translate(57 56) rotate(27)">
+  <path d="M0 0 Q-10 14 -12 27 L-8 39" fill="none" stroke="#173149" stroke-width="11" stroke-linecap="round"/>
+  <path d="M0 0 Q-10 14 -12 27 L-8 39" fill="none" stroke="url(#shirt)" stroke-width="7.5" stroke-linecap="round"/>
+  <path d="M-8 37 L-5 46" stroke="url(#skin)" stroke-width="6" stroke-linecap="round"/>
+ </g>
+ <!-- tronco -->
+ <path d="M49 48 Q59 43 72 48 L78 88 Q67 98 51 91 L43 62Z" fill="url(#shirt)" stroke="#173149" stroke-width="2.5"/>
+ <path d="M54 53 Q64 57 73 54" fill="none" stroke="#ffffff" stroke-width="2" opacity=".55"/>
+ <path d="M61 60 L64 87" stroke="#ffffff" stroke-width="1.5" opacity=".25"/>
+ <!-- braço da frente -->
+ <g transform="translate(73 56) rotate(-27)">
+  <path d="M0 0 Q11 13 12 27 L8 39" fill="none" stroke="#173149" stroke-width="12" stroke-linecap="round"/>
+  <path d="M0 0 Q11 13 12 27 L8 39" fill="none" stroke="url(#shirt)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M8 37 L5 46" stroke="url(#skin)" stroke-width="6.5" stroke-linecap="round"/>
+  <path d="M5 45 Q1 47 3 52" fill="none" stroke="url(#skin)" stroke-width="5" stroke-linecap="round"/>
+ </g>
+ <!-- perna da frente -->
+ <g transform="translate(62 92) rotate(24.48)">
+  <path d="M0 0 Q5 19 9 37 L14 52" fill="none" stroke="#142a40" stroke-width="14" stroke-linecap="round"/>
+  <path d="M0 0 Q5 19 9 37 L14 52" fill="none" stroke="url(#pants)" stroke-width="9.5" stroke-linecap="round"/>
+  <path d="M13 50 Q20 49 25 56 Q24 62 4 60 L1 56 Q5 51 13 50" fill="url(#shoe)" stroke="#183149" stroke-width="2"/>
+  <path d="M7 58 L23 58" stroke="#18a9c2" stroke-width="2.5" stroke-linecap="round"/>
+ </g>
+ <!-- pescoço e cabeça -->
+ <path d="M58 43 L58 51 Q65 56 70 49 L68 40Z" fill="url(#skin)"/>
+ <ellipse cx="65" cy="29" rx="13" ry="16" fill="url(#skin)" stroke="#553d38" stroke-width="1.3"/>
+ <path d="M52 27 Q49 10 64 10 Q79 10 79 27 L75 23 Q69 19 61 22 L55 31Z" fill="#26394b"/>
+ <path d="M53 24 Q54 15 64 14 Q73 13 78 22 L74 20 L68 22 L61 19 L56 27Z" fill="#1b2a3c"/>
+ <ellipse cx="71" cy="29" rx="1.6" ry="1.8" fill="#263444"/>
+ <path d="M76 33 L80 35 L76 37" fill="none" stroke="#b8755d" stroke-width="1.3" stroke-linecap="round"/>
+ <path d="M62 42 Q68 45 73 41" fill="none" stroke="#bd8066" stroke-width="1" opacity=".7"/>
+ <path d="M48 62 L43 79" stroke="#ffffff" stroke-width="2" opacity=".35" stroke-linecap="round"/>
+ </g>
+<g transform="translate(384 0)">
+ <ellipse cx="64" cy="146" rx="27" ry="5" fill="#12283b" opacity=".17" filter="url(#shadow)"/>
+ <!-- perna de trás -->
+ <g transform="translate(62 94) rotate(-17.309974003446687)">
+  <path d="M0 0 Q-4 20 -8 37 L-12 52" fill="none" stroke="#142a40" stroke-width="13" stroke-linecap="round"/>
+  <path d="M0 0 Q-4 20 -8 37 L-12 52" fill="none" stroke="url(#pants)" stroke-width="9" stroke-linecap="round"/>
+  <path d="M-12 51 Q-20 52 -22 59 Q-12 63 3 59 L5 55 Q-2 51 -12 51" fill="url(#shoe)" stroke="#183149" stroke-width="2"/>
+  <path d="M-17 58 L1 58" stroke="#18a9c2" stroke-width="2.5" stroke-linecap="round"/>
+ </g>
+ <!-- braço de trás -->
+ <g transform="translate(57 56) rotate(19.091883092036788)">
+  <path d="M0 0 Q-10 14 -12 27 L-8 39" fill="none" stroke="#173149" stroke-width="11" stroke-linecap="round"/>
+  <path d="M0 0 Q-10 14 -12 27 L-8 39" fill="none" stroke="url(#shirt)" stroke-width="7.5" stroke-linecap="round"/>
+  <path d="M-8 37 L-5 46" stroke="url(#skin)" stroke-width="6" stroke-linecap="round"/>
+ </g>
+ <!-- tronco -->
+ <path d="M49 48 Q59 43 72 48 L78 88 Q67 98 51 91 L43 62Z" fill="url(#shirt)" stroke="#173149" stroke-width="2.5"/>
+ <path d="M54 53 Q64 57 73 54" fill="none" stroke="#ffffff" stroke-width="2" opacity=".55"/>
+ <path d="M61 60 L64 87" stroke="#ffffff" stroke-width="1.5" opacity=".25"/>
+ <!-- braço da frente -->
+ <g transform="translate(73 56) rotate(-19.091883092036785)">
+  <path d="M0 0 Q11 13 12 27 L8 39" fill="none" stroke="#173149" stroke-width="12" stroke-linecap="round"/>
+  <path d="M0 0 Q11 13 12 27 L8 39" fill="none" stroke="url(#shirt)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M8 37 L5 46" stroke="url(#skin)" stroke-width="6.5" stroke-linecap="round"/>
+  <path d="M5 45 Q1 47 3 52" fill="none" stroke="url(#skin)" stroke-width="5" stroke-linecap="round"/>
+ </g>
+ <!-- perna da frente -->
+ <g transform="translate(62 92) rotate(17.309974003446683)">
+  <path d="M0 0 Q5 19 9 37 L14 52" fill="none" stroke="#142a40" stroke-width="14" stroke-linecap="round"/>
+  <path d="M0 0 Q5 19 9 37 L14 52" fill="none" stroke="url(#pants)" stroke-width="9.5" stroke-linecap="round"/>
+  <path d="M13 50 Q20 49 25 56 Q24 62 4 60 L1 56 Q5 51 13 50" fill="url(#shoe)" stroke="#183149" stroke-width="2"/>
+  <path d="M7 58 L23 58" stroke="#18a9c2" stroke-width="2.5" stroke-linecap="round"/>
+ </g>
+ <!-- pescoço e cabeça -->
+ <path d="M58 43 L58 51 Q65 56 70 49 L68 40Z" fill="url(#skin)"/>
+ <ellipse cx="65" cy="29" rx="13" ry="16" fill="url(#skin)" stroke="#553d38" stroke-width="1.3"/>
+ <path d="M52 27 Q49 10 64 10 Q79 10 79 27 L75 23 Q69 19 61 22 L55 31Z" fill="#26394b"/>
+ <path d="M53 24 Q54 15 64 14 Q73 13 78 22 L74 20 L68 22 L61 19 L56 27Z" fill="#1b2a3c"/>
+ <ellipse cx="71" cy="29" rx="1.6" ry="1.8" fill="#263444"/>
+ <path d="M76 33 L80 35 L76 37" fill="none" stroke="#b8755d" stroke-width="1.3" stroke-linecap="round"/>
+ <path d="M62 42 Q68 45 73 41" fill="none" stroke="#bd8066" stroke-width="1" opacity=".7"/>
+ <path d="M48 62 L43 79" stroke="#ffffff" stroke-width="2" opacity=".35" stroke-linecap="round"/>
+ </g>
+<g transform="translate(512 0)">
+ <ellipse cx="64" cy="146" rx="27" ry="5" fill="#12283b" opacity=".17" filter="url(#shadow)"/>
+ <!-- perna de trás -->
+ <g transform="translate(62 94) rotate(-5.995870728625441e-15)">
+  <path d="M0 0 Q-4 20 -8 37 L-12 52" fill="none" stroke="#142a40" stroke-width="13" stroke-linecap="round"/>
+  <path d="M0 0 Q-4 20 -8 37 L-12 52" fill="none" stroke="url(#pants)" stroke-width="9" stroke-linecap="round"/>
+  <path d="M-12 51 Q-20 52 -22 59 Q-12 63 3 59 L5 55 Q-2 51 -12 51" fill="url(#shoe)" stroke="#183149" stroke-width="2"/>
+  <path d="M-17 58 L1 58" stroke="#18a9c2" stroke-width="2.5" stroke-linecap="round"/>
+ </g>
+ <!-- braço de trás -->
+ <g transform="translate(57 56) rotate(6.6130927153957075e-15)">
+  <path d="M0 0 Q-10 14 -12 27 L-8 39" fill="none" stroke="#173149" stroke-width="11" stroke-linecap="round"/>
+  <path d="M0 0 Q-10 14 -12 27 L-8 39" fill="none" stroke="url(#shirt)" stroke-width="7.5" stroke-linecap="round"/>
+  <path d="M-8 37 L-5 46" stroke="url(#skin)" stroke-width="6" stroke-linecap="round"/>
+ </g>
+ <!-- tronco -->
+ <path d="M49 48 Q59 43 72 48 L78 88 Q67 98 51 91 L43 62Z" fill="url(#shirt)" stroke="#173149" stroke-width="2.5"/>
+ <path d="M54 53 Q64 57 73 54" fill="none" stroke="#ffffff" stroke-width="2" opacity=".55"/>
+ <path d="M61 60 L64 87" stroke="#ffffff" stroke-width="1.5" opacity=".25"/>
+ <!-- braço da frente -->
+ <g transform="translate(73 56) rotate(-3.3065463576978537e-15)">
+  <path d="M0 0 Q11 13 12 27 L8 39" fill="none" stroke="#173149" stroke-width="12" stroke-linecap="round"/>
+  <path d="M0 0 Q11 13 12 27 L8 39" fill="none" stroke="url(#shirt)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M8 37 L5 46" stroke="url(#skin)" stroke-width="6.5" stroke-linecap="round"/>
+  <path d="M5 45 Q1 47 3 52" fill="none" stroke="url(#skin)" stroke-width="5" stroke-linecap="round"/>
+ </g>
+ <!-- perna da frente -->
+ <g transform="translate(62 92) rotate(2.9979353643127203e-15)">
+  <path d="M0 0 Q5 19 9 37 L14 52" fill="none" stroke="#142a40" stroke-width="14" stroke-linecap="round"/>
+  <path d="M0 0 Q5 19 9 37 L14 52" fill="none" stroke="url(#pants)" stroke-width="9.5" stroke-linecap="round"/>
+  <path d="M13 50 Q20 49 25 56 Q24 62 4 60 L1 56 Q5 51 13 50" fill="url(#shoe)" stroke="#183149" stroke-width="2"/>
+  <path d="M7 58 L23 58" stroke="#18a9c2" stroke-width="2.5" stroke-linecap="round"/>
+ </g>
+ <!-- pescoço e cabeça -->
+ <path d="M58 43 L58 51 Q65 56 70 49 L68 40Z" fill="url(#skin)"/>
+ <ellipse cx="65" cy="29" rx="13" ry="16" fill="url(#skin)" stroke="#553d38" stroke-width="1.3"/>
+ <path d="M52 27 Q49 10 64 10 Q79 10 79 27 L75 23 Q69 19 61 22 L55 31Z" fill="#26394b"/>
+ <path d="M53 24 Q54 15 64 14 Q73 13 78 22 L74 20 L68 22 L61 19 L56 27Z" fill="#1b2a3c"/>
+ <ellipse cx="71" cy="29" rx="1.6" ry="1.8" fill="#263444"/>
+ <path d="M76 33 L80 35 L76 37" fill="none" stroke="#b8755d" stroke-width="1.3" stroke-linecap="round"/>
+ <path d="M62 42 Q68 45 73 41" fill="none" stroke="#bd8066" stroke-width="1" opacity=".7"/>
+ <path d="M48 62 L43 79" stroke="#ffffff" stroke-width="2" opacity=".35" stroke-linecap="round"/>
+ </g>
+<g transform="translate(640 0)">
+ <ellipse cx="64" cy="146" rx="27" ry="5" fill="#12283b" opacity=".17" filter="url(#shadow)"/>
+ <!-- perna de trás -->
+ <g transform="translate(62 94) rotate(17.30997400344668)">
+  <path d="M0 0 Q-4 20 -8 37 L-12 52" fill="none" stroke="#142a40" stroke-width="13" stroke-linecap="round"/>
+  <path d="M0 0 Q-4 20 -8 37 L-12 52" fill="none" stroke="url(#pants)" stroke-width="9" stroke-linecap="round"/>
+  <path d="M-12 51 Q-20 52 -22 59 Q-12 63 3 59 L5 55 Q-2 51 -12 51" fill="url(#shoe)" stroke="#183149" stroke-width="2"/>
+  <path d="M-17 58 L1 58" stroke="#18a9c2" stroke-width="2.5" stroke-linecap="round"/>
+ </g>
+ <!-- braço de trás -->
+ <g transform="translate(57 56) rotate(-19.091883092036777)">
+  <path d="M0 0 Q-10 14 -12 27 L-8 39" fill="none" stroke="#173149" stroke-width="11" stroke-linecap="round"/>
+  <path d="M0 0 Q-10 14 -12 27 L-8 39" fill="none" stroke="url(#shirt)" stroke-width="7.5" stroke-linecap="round"/>
+  <path d="M-8 37 L-5 46" stroke="url(#skin)" stroke-width="6" stroke-linecap="round"/>
+ </g>
+ <!-- tronco -->
+ <path d="M49 48 Q59 43 72 48 L78 88 Q67 98 51 91 L43 62Z" fill="url(#shirt)" stroke="#173149" stroke-width="2.5"/>
+ <path d="M54 53 Q64 57 73 54" fill="none" stroke="#ffffff" stroke-width="2" opacity=".55"/>
+ <path d="M61 60 L64 87" stroke="#ffffff" stroke-width="1.5" opacity=".25"/>
+ <!-- braço da frente -->
+ <g transform="translate(73 56) rotate(19.09188309203678)">
+  <path d="M0 0 Q11 13 12 27 L8 39" fill="none" stroke="#173149" stroke-width="12" stroke-linecap="round"/>
+  <path d="M0 0 Q11 13 12 27 L8 39" fill="none" stroke="url(#shirt)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M8 37 L5 46" stroke="url(#skin)" stroke-width="6.5" stroke-linecap="round"/>
+  <path d="M5 45 Q1 47 3 52" fill="none" stroke="url(#skin)" stroke-width="5" stroke-linecap="round"/>
+ </g>
+ <!-- perna da frente -->
+ <g transform="translate(62 92) rotate(-17.309974003446683)">
+  <path d="M0 0 Q5 19 9 37 L14 52" fill="none" stroke="#142a40" stroke-width="14" stroke-linecap="round"/>
+  <path d="M0 0 Q5 19 9 37 L14 52" fill="none" stroke="url(#pants)" stroke-width="9.5" stroke-linecap="round"/>
+  <path d="M13 50 Q20 49 25 56 Q24 62 4 60 L1 56 Q5 51 13 50" fill="url(#shoe)" stroke="#183149" stroke-width="2"/>
+  <path d="M7 58 L23 58" stroke="#18a9c2" stroke-width="2.5" stroke-linecap="round"/>
+ </g>
+ <!-- pescoço e cabeça -->
+ <path d="M58 43 L58 51 Q65 56 70 49 L68 40Z" fill="url(#skin)"/>
+ <ellipse cx="65" cy="29" rx="13" ry="16" fill="url(#skin)" stroke="#553d38" stroke-width="1.3"/>
+ <path d="M52 27 Q49 10 64 10 Q79 10 79 27 L75 23 Q69 19 61 22 L55 31Z" fill="#26394b"/>
+ <path d="M53 24 Q54 15 64 14 Q73 13 78 22 L74 20 L68 22 L61 19 L56 27Z" fill="#1b2a3c"/>
+ <ellipse cx="71" cy="29" rx="1.6" ry="1.8" fill="#263444"/>
+ <path d="M76 33 L80 35 L76 37" fill="none" stroke="#b8755d" stroke-width="1.3" stroke-linecap="round"/>
+ <path d="M62 42 Q68 45 73 41" fill="none" stroke="#bd8066" stroke-width="1" opacity=".7"/>
+ <path d="M48 62 L43 79" stroke="#ffffff" stroke-width="2" opacity=".35" stroke-linecap="round"/>
+ </g>
+<g transform="translate(768 0)">
+ <ellipse cx="64" cy="146" rx="27" ry="5" fill="#12283b" opacity=".17" filter="url(#shadow)"/>
+ <!-- perna de trás -->
+ <g transform="translate(62 94) rotate(24.48)">
+  <path d="M0 0 Q-4 20 -8 37 L-12 52" fill="none" stroke="#142a40" stroke-width="13" stroke-linecap="round"/>
+  <path d="M0 0 Q-4 20 -8 37 L-12 52" fill="none" stroke="url(#pants)" stroke-width="9" stroke-linecap="round"/>
+  <path d="M-12 51 Q-20 52 -22 59 Q-12 63 3 59 L5 55 Q-2 51 -12 51" fill="url(#shoe)" stroke="#183149" stroke-width="2"/>
+  <path d="M-17 58 L1 58" stroke="#18a9c2" stroke-width="2.5" stroke-linecap="round"/>
+ </g>
+ <!-- braço de trás -->
+ <g transform="translate(57 56) rotate(-27)">
+  <path d="M0 0 Q-10 14 -12 27 L-8 39" fill="none" stroke="#173149" stroke-width="11" stroke-linecap="round"/>
+  <path d="M0 0 Q-10 14 -12 27 L-8 39" fill="none" stroke="url(#shirt)" stroke-width="7.5" stroke-linecap="round"/>
+  <path d="M-8 37 L-5 46" stroke="url(#skin)" stroke-width="6" stroke-linecap="round"/>
+ </g>
+ <!-- tronco -->
+ <path d="M49 48 Q59 43 72 48 L78 88 Q67 98 51 91 L43 62Z" fill="url(#shirt)" stroke="#173149" stroke-width="2.5"/>
+ <path d="M54 53 Q64 57 73 54" fill="none" stroke="#ffffff" stroke-width="2" opacity=".55"/>
+ <path d="M61 60 L64 87" stroke="#ffffff" stroke-width="1.5" opacity=".25"/>
+ <!-- braço da frente -->
+ <g transform="translate(73 56) rotate(27)">
+  <path d="M0 0 Q11 13 12 27 L8 39" fill="none" stroke="#173149" stroke-width="12" stroke-linecap="round"/>
+  <path d="M0 0 Q11 13 12 27 L8 39" fill="none" stroke="url(#shirt)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M8 37 L5 46" stroke="url(#skin)" stroke-width="6.5" stroke-linecap="round"/>
+  <path d="M5 45 Q1 47 3 52" fill="none" stroke="url(#skin)" stroke-width="5" stroke-linecap="round"/>
+ </g>
+ <!-- perna da frente -->
+ <g transform="translate(62 92) rotate(-24.48)">
+  <path d="M0 0 Q5 19 9 37 L14 52" fill="none" stroke="#142a40" stroke-width="14" stroke-linecap="round"/>
+  <path d="M0 0 Q5 19 9 37 L14 52" fill="none" stroke="url(#pants)" stroke-width="9.5" stroke-linecap="round"/>
+  <path d="M13 50 Q20 49 25 56 Q24 62 4 60 L1 56 Q5 51 13 50" fill="url(#shoe)" stroke="#183149" stroke-width="2"/>
+  <path d="M7 58 L23 58" stroke="#18a9c2" stroke-width="2.5" stroke-linecap="round"/>
+ </g>
+ <!-- pescoço e cabeça -->
+ <path d="M58 43 L58 51 Q65 56 70 49 L68 40Z" fill="url(#skin)"/>
+ <ellipse cx="65" cy="29" rx="13" ry="16" fill="url(#skin)" stroke="#553d38" stroke-width="1.3"/>
+ <path d="M52 27 Q49 10 64 10 Q79 10 79 27 L75 23 Q69 19 61 22 L55 31Z" fill="#26394b"/>
+ <path d="M53 24 Q54 15 64 14 Q73 13 78 22 L74 20 L68 22 L61 19 L56 27Z" fill="#1b2a3c"/>
+ <ellipse cx="71" cy="29" rx="1.6" ry="1.8" fill="#263444"/>
+ <path d="M76 33 L80 35 L76 37" fill="none" stroke="#b8755d" stroke-width="1.3" stroke-linecap="round"/>
+ <path d="M62 42 Q68 45 73 41" fill="none" stroke="#bd8066" stroke-width="1" opacity=".7"/>
+ <path d="M48 62 L43 79" stroke="#ffffff" stroke-width="2" opacity=".35" stroke-linecap="round"/>
+ </g>
+<g transform="translate(896 0)">
+ <ellipse cx="64" cy="146" rx="27" ry="5" fill="#12283b" opacity=".17" filter="url(#shadow)"/>
+ <!-- perna de trás -->
+ <g transform="translate(62 94) rotate(17.3099740034467)">
+  <path d="M0 0 Q-4 20 -8 37 L-12 52" fill="none" stroke="#142a40" stroke-width="13" stroke-linecap="round"/>
+  <path d="M0 0 Q-4 20 -8 37 L-12 52" fill="none" stroke="url(#pants)" stroke-width="9" stroke-linecap="round"/>
+  <path d="M-12 51 Q-20 52 -22 59 Q-12 63 3 59 L5 55 Q-2 51 -12 51" fill="url(#shoe)" stroke="#183149" stroke-width="2"/>
+  <path d="M-17 58 L1 58" stroke="#18a9c2" stroke-width="2.5" stroke-linecap="round"/>
+ </g>
+ <!-- braço de trás -->
+ <g transform="translate(57 56) rotate(-19.091883092036806)">
+  <path d="M0 0 Q-10 14 -12 27 L-8 39" fill="none" stroke="#173149" stroke-width="11" stroke-linecap="round"/>
+  <path d="M0 0 Q-10 14 -12 27 L-8 39" fill="none" stroke="url(#shirt)" stroke-width="7.5" stroke-linecap="round"/>
+  <path d="M-8 37 L-5 46" stroke="url(#skin)" stroke-width="6" stroke-linecap="round"/>
+ </g>
+ <!-- tronco -->
+ <path d="M49 48 Q59 43 72 48 L78 88 Q67 98 51 91 L43 62Z" fill="url(#shirt)" stroke="#173149" stroke-width="2.5"/>
+ <path d="M54 53 Q64 57 73 54" fill="none" stroke="#ffffff" stroke-width="2" opacity=".55"/>
+ <path d="M61 60 L64 87" stroke="#ffffff" stroke-width="1.5" opacity=".25"/>
+ <!-- braço da frente -->
+ <g transform="translate(73 56) rotate(19.091883092036788)">
+  <path d="M0 0 Q11 13 12 27 L8 39" fill="none" stroke="#173149" stroke-width="12" stroke-linecap="round"/>
+  <path d="M0 0 Q11 13 12 27 L8 39" fill="none" stroke="url(#shirt)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M8 37 L5 46" stroke="url(#skin)" stroke-width="6.5" stroke-linecap="round"/>
+  <path d="M5 45 Q1 47 3 52" fill="none" stroke="url(#skin)" stroke-width="5" stroke-linecap="round"/>
+ </g>
+ <!-- perna da frente -->
+ <g transform="translate(62 92) rotate(-17.309974003446687)">
+  <path d="M0 0 Q5 19 9 37 L14 52" fill="none" stroke="#142a40" stroke-width="14" stroke-linecap="round"/>
+  <path d="M0 0 Q5 19 9 37 L14 52" fill="none" stroke="url(#pants)" stroke-width="9.5" stroke-linecap="round"/>
+  <path d="M13 50 Q20 49 25 56 Q24 62 4 60 L1 56 Q5 51 13 50" fill="url(#shoe)" stroke="#183149" stroke-width="2"/>
+  <path d="M7 58 L23 58" stroke="#18a9c2" stroke-width="2.5" stroke-linecap="round"/>
+ </g>
+ <!-- pescoço e cabeça -->
+ <path d="M58 43 L58 51 Q65 56 70 49 L68 40Z" fill="url(#skin)"/>
+ <ellipse cx="65" cy="29" rx="13" ry="16" fill="url(#skin)" stroke="#553d38" stroke-width="1.3"/>
+ <path d="M52 27 Q49 10 64 10 Q79 10 79 27 L75 23 Q69 19 61 22 L55 31Z" fill="#26394b"/>
+ <path d="M53 24 Q54 15 64 14 Q73 13 78 22 L74 20 L68 22 L61 19 L56 27Z" fill="#1b2a3c"/>
+ <ellipse cx="71" cy="29" rx="1.6" ry="1.8" fill="#263444"/>
+ <path d="M76 33 L80 35 L76 37" fill="none" stroke="#b8755d" stroke-width="1.3" stroke-linecap="round"/>
+ <path d="M62 42 Q68 45 73 41" fill="none" stroke="#bd8066" stroke-width="1" opacity=".7"/>
+ <path d="M48 62 L43 79" stroke="#ffffff" stroke-width="2" opacity=".35" stroke-linecap="round"/>
+ </g>
+<g transform="translate(0 160)">
+ <ellipse cx="64" cy="146" rx="27" ry="5" fill="#12283b" opacity=".17" filter="url(#shadow)"/>
+ <!-- perna de trás -->
+ <g transform="translate(62 94) rotate(2.9979353643127203e-15)">
+  <path d="M0 0 Q-4 20 -8 37 L-12 52" fill="none" stroke="#142a40" stroke-width="13" stroke-linecap="round"/>
+  <path d="M0 0 Q-4 20 -8 37 L-12 52" fill="none" stroke="url(#pants)" stroke-width="9" stroke-linecap="round"/>
+  <path d="M-12 51 Q-20 52 -22 59 Q-12 63 3 59 L5 55 Q-2 51 -12 51" fill="url(#shoe)" stroke="#183149" stroke-width="2"/>
+  <path d="M-17 58 L1 58" stroke="#18a9c2" stroke-width="2.5" stroke-linecap="round"/>
+ </g>
+ <!-- braço de trás -->
+ <g transform="translate(57 56) rotate(-3.3065463576978537e-15)">
+  <path d="M0 0 Q-10 14 -12 27 L-8 39" fill="none" stroke="#173149" stroke-width="11" stroke-linecap="round"/>
+  <path d="M0 0 Q-10 14 -12 27 L-8 39" fill="none" stroke="url(#pink)" stroke-width="7.5" stroke-linecap="round"/>
+  <path d="M-8 37 L-5 46" stroke="url(#skin)" stroke-width="6" stroke-linecap="round"/>
+ </g>
+ <!-- tronco -->
+ <path d="M49 48 Q59 43 72 48 L78 88 Q67 98 51 91 L43 62Z" fill="url(#pink)" stroke="#173149" stroke-width="2.5"/>
+ <path d="M54 53 Q64 57 73 54" fill="none" stroke="#ffffff" stroke-width="2" opacity=".55"/>
+ <path d="M61 60 L64 87" stroke="#ffffff" stroke-width="1.5" opacity=".25"/>
+ <!-- braço da frente -->
+ <g transform="translate(73 56) rotate(0)">
+  <path d="M0 0 Q11 13 12 27 L8 39" fill="none" stroke="#173149" stroke-width="12" stroke-linecap="round"/>
+  <path d="M0 0 Q11 13 12 27 L8 39" fill="none" stroke="url(#pink)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M8 37 L5 46" stroke="url(#skin)" stroke-width="6.5" stroke-linecap="round"/>
+  <path d="M5 45 Q1 47 3 52" fill="none" stroke="url(#skin)" stroke-width="5" stroke-linecap="round"/>
+ </g>
+ <!-- perna da frente -->
+ <g transform="translate(62 92) rotate(0)">
+  <path d="M0 0 Q5 19 9 37 L14 52" fill="none" stroke="#142a40" stroke-width="14" stroke-linecap="round"/>
+  <path d="M0 0 Q5 19 9 37 L14 52" fill="none" stroke="url(#pants)" stroke-width="9.5" stroke-linecap="round"/>
+  <path d="M13 50 Q20 49 25 56 Q24 62 4 60 L1 56 Q5 51 13 50" fill="url(#shoe)" stroke="#183149" stroke-width="2"/>
+  <path d="M7 58 L23 58" stroke="#ef5a9e" stroke-width="2.5" stroke-linecap="round"/>
+ </g>
+ <!-- pescoço e cabeça -->
+ <path d="M58 43 L58 51 Q65 56 70 49 L68 40Z" fill="url(#skin)"/>
+ <ellipse cx="65" cy="29" rx="13" ry="16" fill="url(#skin)" stroke="#553d38" stroke-width="1.3"/>
+ <path d="M52 27 Q49 10 64 10 Q79 10 79 27 L75 23 Q69 19 61 22 L55 31Z" fill="#3b243b"/>
+ <path d="M53 25 Q47 39 53 48 L58 43 L57 29 M76 24 Q84 38 77 48 L72 42 L74 29" fill="#3b243b"/>
+ <ellipse cx="71" cy="29" rx="1.6" ry="1.8" fill="#263444"/>
+ <path d="M76 33 L80 35 L76 37" fill="none" stroke="#b8755d" stroke-width="1.3" stroke-linecap="round"/>
+ <path d="M62 42 Q68 45 73 41" fill="none" stroke="#bd8066" stroke-width="1" opacity=".7"/>
+ <path d="M48 62 L43 79" stroke="#ffffff" stroke-width="2" opacity=".35" stroke-linecap="round"/>
+ </g>
+<g transform="translate(128 160)">
+ <ellipse cx="64" cy="146" rx="27" ry="5" fill="#12283b" opacity=".17" filter="url(#shadow)"/>
+ <!-- perna de trás -->
+ <g transform="translate(62 94) rotate(-17.309974003446683)">
+  <path d="M0 0 Q-4 20 -8 37 L-12 52" fill="none" stroke="#142a40" stroke-width="13" stroke-linecap="round"/>
+  <path d="M0 0 Q-4 20 -8 37 L-12 52" fill="none" stroke="url(#pants)" stroke-width="9" stroke-linecap="round"/>
+  <path d="M-12 51 Q-20 52 -22 59 Q-12 63 3 59 L5 55 Q-2 51 -12 51" fill="url(#shoe)" stroke="#183149" stroke-width="2"/>
+  <path d="M-17 58 L1 58" stroke="#18a9c2" stroke-width="2.5" stroke-linecap="round"/>
+ </g>
+ <!-- braço de trás -->
+ <g transform="translate(57 56) rotate(19.09188309203678)">
+  <path d="M0 0 Q-10 14 -12 27 L-8 39" fill="none" stroke="#173149" stroke-width="11" stroke-linecap="round"/>
+  <path d="M0 0 Q-10 14 -12 27 L-8 39" fill="none" stroke="url(#pink)" stroke-width="7.5" stroke-linecap="round"/>
+  <path d="M-8 37 L-5 46" stroke="url(#skin)" stroke-width="6" stroke-linecap="round"/>
+ </g>
+ <!-- tronco -->
+ <path d="M49 48 Q59 43 72 48 L78 88 Q67 98 51 91 L43 62Z" fill="url(#pink)" stroke="#173149" stroke-width="2.5"/>
+ <path d="M54 53 Q64 57 73 54" fill="none" stroke="#ffffff" stroke-width="2" opacity=".55"/>
+ <path d="M61 60 L64 87" stroke="#ffffff" stroke-width="1.5" opacity=".25"/>
+ <!-- braço da frente -->
+ <g transform="translate(73 56) rotate(-19.09188309203678)">
+  <path d="M0 0 Q11 13 12 27 L8 39" fill="none" stroke="#173149" stroke-width="12" stroke-linecap="round"/>
+  <path d="M0 0 Q11 13 12 27 L8 39" fill="none" stroke="url(#pink)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M8 37 L5 46" stroke="url(#skin)" stroke-width="6.5" stroke-linecap="round"/>
+  <path d="M5 45 Q1 47 3 52" fill="none" stroke="url(#skin)" stroke-width="5" stroke-linecap="round"/>
+ </g>
+ <!-- perna da frente -->
+ <g transform="translate(62 92) rotate(17.309974003446683)">
+  <path d="M0 0 Q5 19 9 37 L14 52" fill="none" stroke="#142a40" stroke-width="14" stroke-linecap="round"/>
+  <path d="M0 0 Q5 19 9 37 L14 52" fill="none" stroke="url(#pants)" stroke-width="9.5" stroke-linecap="round"/>
+  <path d="M13 50 Q20 49 25 56 Q24 62 4 60 L1 56 Q5 51 13 50" fill="url(#shoe)" stroke="#183149" stroke-width="2"/>
+  <path d="M7 58 L23 58" stroke="#ef5a9e" stroke-width="2.5" stroke-linecap="round"/>
+ </g>
+ <!-- pescoço e cabeça -->
+ <path d="M58 43 L58 51 Q65 56 70 49 L68 40Z" fill="url(#skin)"/>
+ <ellipse cx="65" cy="29" rx="13" ry="16" fill="url(#skin)" stroke="#553d38" stroke-width="1.3"/>
+ <path d="M52 27 Q49 10 64 10 Q79 10 79 27 L75 23 Q69 19 61 22 L55 31Z" fill="#3b243b"/>
+ <path d="M53 25 Q47 39 53 48 L58 43 L57 29 M76 24 Q84 38 77 48 L72 42 L74 29" fill="#3b243b"/>
+ <ellipse cx="71" cy="29" rx="1.6" ry="1.8" fill="#263444"/>
+ <path d="M76 33 L80 35 L76 37" fill="none" stroke="#b8755d" stroke-width="1.3" stroke-linecap="round"/>
+ <path d="M62 42 Q68 45 73 41" fill="none" stroke="#bd8066" stroke-width="1" opacity=".7"/>
+ <path d="M48 62 L43 79" stroke="#ffffff" stroke-width="2" opacity=".35" stroke-linecap="round"/>
+ </g>
+<g transform="translate(256 160)">
+ <ellipse cx="64" cy="146" rx="27" ry="5" fill="#12283b" opacity=".17" filter="url(#shadow)"/>
+ <!-- perna de trás -->
+ <g transform="translate(62 94) rotate(-24.48)">
+  <path d="M0 0 Q-4 20 -8 37 L-12 52" fill="none" stroke="#142a40" stroke-width="13" stroke-linecap="round"/>
+  <path d="M0 0 Q-4 20 -8 37 L-12 52" fill="none" stroke="url(#pants)" stroke-width="9" stroke-linecap="round"/>
+  <path d="M-12 51 Q-20 52 -22 59 Q-12 63 3 59 L5 55 Q-2 51 -12 51" fill="url(#shoe)" stroke="#183149" stroke-width="2"/>
+  <path d="M-17 58 L1 58" stroke="#18a9c2" stroke-width="2.5" stroke-linecap="round"/>
+ </g>
+ <!-- braço de trás -->
+ <g transform="translate(57 56) rotate(27)">
+  <path d="M0 0 Q-10 14 -12 27 L-8 39" fill="none" stroke="#173149" stroke-width="11" stroke-linecap="round"/>
+  <path d="M0 0 Q-10 14 -12 27 L-8 39" fill="none" stroke="url(#pink)" stroke-width="7.5" stroke-linecap="round"/>
+  <path d="M-8 37 L-5 46" stroke="url(#skin)" stroke-width="6" stroke-linecap="round"/>
+ </g>
+ <!-- tronco -->
+ <path d="M49 48 Q59 43 72 48 L78 88 Q67 98 51 91 L43 62Z" fill="url(#pink)" stroke="#173149" stroke-width="2.5"/>
+ <path d="M54 53 Q64 57 73 54" fill="none" stroke="#ffffff" stroke-width="2" opacity=".55"/>
+ <path d="M61 60 L64 87" stroke="#ffffff" stroke-width="1.5" opacity=".25"/>
+ <!-- braço da frente -->
+ <g transform="translate(73 56) rotate(-27)">
+  <path d="M0 0 Q11 13 12 27 L8 39" fill="none" stroke="#173149" stroke-width="12" stroke-linecap="round"/>
+  <path d="M0 0 Q11 13 12 27 L8 39" fill="none" stroke="url(#pink)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M8 37 L5 46" stroke="url(#skin)" stroke-width="6.5" stroke-linecap="round"/>
+  <path d="M5 45 Q1 47 3 52" fill="none" stroke="url(#skin)" stroke-width="5" stroke-linecap="round"/>
+ </g>
+ <!-- perna da frente -->
+ <g transform="translate(62 92) rotate(24.48)">
+  <path d="M0 0 Q5 19 9 37 L14 52" fill="none" stroke="#142a40" stroke-width="14" stroke-linecap="round"/>
+  <path d="M0 0 Q5 19 9 37 L14 52" fill="none" stroke="url(#pants)" stroke-width="9.5" stroke-linecap="round"/>
+  <path d="M13 50 Q20 49 25 56 Q24 62 4 60 L1 56 Q5 51 13 50" fill="url(#shoe)" stroke="#183149" stroke-width="2"/>
+  <path d="M7 58 L23 58" stroke="#ef5a9e" stroke-width="2.5" stroke-linecap="round"/>
+ </g>
+ <!-- pescoço e cabeça -->
+ <path d="M58 43 L58 51 Q65 56 70 49 L68 40Z" fill="url(#skin)"/>
+ <ellipse cx="65" cy="29" rx="13" ry="16" fill="url(#skin)" stroke="#553d38" stroke-width="1.3"/>
+ <path d="M52 27 Q49 10 64 10 Q79 10 79 27 L75 23 Q69 19 61 22 L55 31Z" fill="#3b243b"/>
+ <path d="M53 25 Q47 39 53 48 L58 43 L57 29 M76 24 Q84 38 77 48 L72 42 L74 29" fill="#3b243b"/>
+ <ellipse cx="71" cy="29" rx="1.6" ry="1.8" fill="#263444"/>
+ <path d="M76 33 L80 35 L76 37" fill="none" stroke="#b8755d" stroke-width="1.3" stroke-linecap="round"/>
+ <path d="M62 42 Q68 45 73 41" fill="none" stroke="#bd8066" stroke-width="1" opacity=".7"/>
+ <path d="M48 62 L43 79" stroke="#ffffff" stroke-width="2" opacity=".35" stroke-linecap="round"/>
+ </g>
+<g transform="translate(384 160)">
+ <ellipse cx="64" cy="146" rx="27" ry="5" fill="#12283b" opacity=".17" filter="url(#shadow)"/>
+ <!-- perna de trás -->
+ <g transform="translate(62 94) rotate(-17.309974003446687)">
+  <path d="M0 0 Q-4 20 -8 37 L-12 52" fill="none" stroke="#142a40" stroke-width="13" stroke-linecap="round"/>
+  <path d="M0 0 Q-4 20 -8 37 L-12 52" fill="none" stroke="url(#pants)" stroke-width="9" stroke-linecap="round"/>
+  <path d="M-12 51 Q-20 52 -22 59 Q-12 63 3 59 L5 55 Q-2 51 -12 51" fill="url(#shoe)" stroke="#183149" stroke-width="2"/>
+  <path d="M-17 58 L1 58" stroke="#18a9c2" stroke-width="2.5" stroke-linecap="round"/>
+ </g>
+ <!-- braço de trás -->
+ <g transform="translate(57 56) rotate(19.091883092036788)">
+  <path d="M0 0 Q-10 14 -12 27 L-8 39" fill="none" stroke="#173149" stroke-width="11" stroke-linecap="round"/>
+  <path d="M0 0 Q-10 14 -12 27 L-8 39" fill="none" stroke="url(#pink)" stroke-width="7.5" stroke-linecap="round"/>
+  <path d="M-8 37 L-5 46" stroke="url(#skin)" stroke-width="6" stroke-linecap="round"/>
+ </g>
+ <!-- tronco -->
+ <path d="M49 48 Q59 43 72 48 L78 88 Q67 98 51 91 L43 62Z" fill="url(#pink)" stroke="#173149" stroke-width="2.5"/>
+ <path d="M54 53 Q64 57 73 54" fill="none" stroke="#ffffff" stroke-width="2" opacity=".55"/>
+ <path d="M61 60 L64 87" stroke="#ffffff" stroke-width="1.5" opacity=".25"/>
+ <!-- braço da frente -->
+ <g transform="translate(73 56) rotate(-19.091883092036785)">
+  <path d="M0 0 Q11 13 12 27 L8 39" fill="none" stroke="#173149" stroke-width="12" stroke-linecap="round"/>
+  <path d="M0 0 Q11 13 12 27 L8 39" fill="none" stroke="url(#pink)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M8 37 L5 46" stroke="url(#skin)" stroke-width="6.5" stroke-linecap="round"/>
+  <path d="M5 45 Q1 47 3 52" fill="none" stroke="url(#skin)" stroke-width="5" stroke-linecap="round"/>
+ </g>
+ <!-- perna da frente -->
+ <g transform="translate(62 92) rotate(17.309974003446683)">
+  <path d="M0 0 Q5 19 9 37 L14 52" fill="none" stroke="#142a40" stroke-width="14" stroke-linecap="round"/>
+  <path d="M0 0 Q5 19 9 37 L14 52" fill="none" stroke="url(#pants)" stroke-width="9.5" stroke-linecap="round"/>
+  <path d="M13 50 Q20 49 25 56 Q24 62 4 60 L1 56 Q5 51 13 50" fill="url(#shoe)" stroke="#183149" stroke-width="2"/>
+  <path d="M7 58 L23 58" stroke="#ef5a9e" stroke-width="2.5" stroke-linecap="round"/>
+ </g>
+ <!-- pescoço e cabeça -->
+ <path d="M58 43 L58 51 Q65 56 70 49 L68 40Z" fill="url(#skin)"/>
+ <ellipse cx="65" cy="29" rx="13" ry="16" fill="url(#skin)" stroke="#553d38" stroke-width="1.3"/>
+ <path d="M52 27 Q49 10 64 10 Q79 10 79 27 L75 23 Q69 19 61 22 L55 31Z" fill="#3b243b"/>
+ <path d="M53 25 Q47 39 53 48 L58 43 L57 29 M76 24 Q84 38 77 48 L72 42 L74 29" fill="#3b243b"/>
+ <ellipse cx="71" cy="29" rx="1.6" ry="1.8" fill="#263444"/>
+ <path d="M76 33 L80 35 L76 37" fill="none" stroke="#b8755d" stroke-width="1.3" stroke-linecap="round"/>
+ <path d="M62 42 Q68 45 73 41" fill="none" stroke="#bd8066" stroke-width="1" opacity=".7"/>
+ <path d="M48 62 L43 79" stroke="#ffffff" stroke-width="2" opacity=".35" stroke-linecap="round"/>
+ </g>
+<g transform="translate(512 160)">
+ <ellipse cx="64" cy="146" rx="27" ry="5" fill="#12283b" opacity=".17" filter="url(#shadow)"/>
+ <!-- perna de trás -->
+ <g transform="translate(62 94) rotate(-5.995870728625441e-15)">
+  <path d="M0 0 Q-4 20 -8 37 L-12 52" fill="none" stroke="#142a40" stroke-width="13" stroke-linecap="round"/>
+  <path d="M0 0 Q-4 20 -8 37 L-12 52" fill="none" stroke="url(#pants)" stroke-width="9" stroke-linecap="round"/>
+  <path d="M-12 51 Q-20 52 -22 59 Q-12 63 3 59 L5 55 Q-2 51 -12 51" fill="url(#shoe)" stroke="#183149" stroke-width="2"/>
+  <path d="M-17 58 L1 58" stroke="#18a9c2" stroke-width="2.5" stroke-linecap="round"/>
+ </g>
+ <!-- braço de trás -->
+ <g transform="translate(57 56) rotate(6.6130927153957075e-15)">
+  <path d="M0 0 Q-10 14 -12 27 L-8 39" fill="none" stroke="#173149" stroke-width="11" stroke-linecap="round"/>
+  <path d="M0 0 Q-10 14 -12 27 L-8 39" fill="none" stroke="url(#pink)" stroke-width="7.5" stroke-linecap="round"/>
+  <path d="M-8 37 L-5 46" stroke="url(#skin)" stroke-width="6" stroke-linecap="round"/>
+ </g>
+ <!-- tronco -->
+ <path d="M49 48 Q59 43 72 48 L78 88 Q67 98 51 91 L43 62Z" fill="url(#pink)" stroke="#173149" stroke-width="2.5"/>
+ <path d="M54 53 Q64 57 73 54" fill="none" stroke="#ffffff" stroke-width="2" opacity=".55"/>
+ <path d="M61 60 L64 87" stroke="#ffffff" stroke-width="1.5" opacity=".25"/>
+ <!-- braço da frente -->
+ <g transform="translate(73 56) rotate(-3.3065463576978537e-15)">
+  <path d="M0 0 Q11 13 12 27 L8 39" fill="none" stroke="#173149" stroke-width="12" stroke-linecap="round"/>
+  <path d="M0 0 Q11 13 12 27 L8 39" fill="none" stroke="url(#pink)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M8 37 L5 46" stroke="url(#skin)" stroke-width="6.5" stroke-linecap="round"/>
+  <path d="M5 45 Q1 47 3 52" fill="none" stroke="url(#skin)" stroke-width="5" stroke-linecap="round"/>
+ </g>
+ <!-- perna da frente -->
+ <g transform="translate(62 92) rotate(2.9979353643127203e-15)">
+  <path d="M0 0 Q5 19 9 37 L14 52" fill="none" stroke="#142a40" stroke-width="14" stroke-linecap="round"/>
+  <path d="M0 0 Q5 19 9 37 L14 52" fill="none" stroke="url(#pants)" stroke-width="9.5" stroke-linecap="round"/>
+  <path d="M13 50 Q20 49 25 56 Q24 62 4 60 L1 56 Q5 51 13 50" fill="url(#shoe)" stroke="#183149" stroke-width="2"/>
+  <path d="M7 58 L23 58" stroke="#ef5a9e" stroke-width="2.5" stroke-linecap="round"/>
+ </g>
+ <!-- pescoço e cabeça -->
+ <path d="M58 43 L58 51 Q65 56 70 49 L68 40Z" fill="url(#skin)"/>
+ <ellipse cx="65" cy="29" rx="13" ry="16" fill="url(#skin)" stroke="#553d38" stroke-width="1.3"/>
+ <path d="M52 27 Q49 10 64 10 Q79 10 79 27 L75 23 Q69 19 61 22 L55 31Z" fill="#3b243b"/>
+ <path d="M53 25 Q47 39 53 48 L58 43 L57 29 M76 24 Q84 38 77 48 L72 42 L74 29" fill="#3b243b"/>
+ <ellipse cx="71" cy="29" rx="1.6" ry="1.8" fill="#263444"/>
+ <path d="M76 33 L80 35 L76 37" fill="none" stroke="#b8755d" stroke-width="1.3" stroke-linecap="round"/>
+ <path d="M62 42 Q68 45 73 41" fill="none" stroke="#bd8066" stroke-width="1" opacity=".7"/>
+ <path d="M48 62 L43 79" stroke="#ffffff" stroke-width="2" opacity=".35" stroke-linecap="round"/>
+ </g>
+<g transform="translate(640 160)">
+ <ellipse cx="64" cy="146" rx="27" ry="5" fill="#12283b" opacity=".17" filter="url(#shadow)"/>
+ <!-- perna de trás -->
+ <g transform="translate(62 94) rotate(17.30997400344668)">
+  <path d="M0 0 Q-4 20 -8 37 L-12 52" fill="none" stroke="#142a40" stroke-width="13" stroke-linecap="round"/>
+  <path d="M0 0 Q-4 20 -8 37 L-12 52" fill="none" stroke="url(#pants)" stroke-width="9" stroke-linecap="round"/>
+  <path d="M-12 51 Q-20 52 -22 59 Q-12 63 3 59 L5 55 Q-2 51 -12 51" fill="url(#shoe)" stroke="#183149" stroke-width="2"/>
+  <path d="M-17 58 L1 58" stroke="#18a9c2" stroke-width="2.5" stroke-linecap="round"/>
+ </g>
+ <!-- braço de trás -->
+ <g transform="translate(57 56) rotate(-19.091883092036777)">
+  <path d="M0 0 Q-10 14 -12 27 L-8 39" fill="none" stroke="#173149" stroke-width="11" stroke-linecap="round"/>
+  <path d="M0 0 Q-10 14 -12 27 L-8 39" fill="none" stroke="url(#pink)" stroke-width="7.5" stroke-linecap="round"/>
+  <path d="M-8 37 L-5 46" stroke="url(#skin)" stroke-width="6" stroke-linecap="round"/>
+ </g>
+ <!-- tronco -->
+ <path d="M49 48 Q59 43 72 48 L78 88 Q67 98 51 91 L43 62Z" fill="url(#pink)" stroke="#173149" stroke-width="2.5"/>
+ <path d="M54 53 Q64 57 73 54" fill="none" stroke="#ffffff" stroke-width="2" opacity=".55"/>
+ <path d="M61 60 L64 87" stroke="#ffffff" stroke-width="1.5" opacity=".25"/>
+ <!-- braço da frente -->
+ <g transform="translate(73 56) rotate(19.09188309203678)">
+  <path d="M0 0 Q11 13 12 27 L8 39" fill="none" stroke="#173149" stroke-width="12" stroke-linecap="round"/>
+  <path d="M0 0 Q11 13 12 27 L8 39" fill="none" stroke="url(#pink)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M8 37 L5 46" stroke="url(#skin)" stroke-width="6.5" stroke-linecap="round"/>
+  <path d="M5 45 Q1 47 3 52" fill="none" stroke="url(#skin)" stroke-width="5" stroke-linecap="round"/>
+ </g>
+ <!-- perna da frente -->
+ <g transform="translate(62 92) rotate(-17.309974003446683)">
+  <path d="M0 0 Q5 19 9 37 L14 52" fill="none" stroke="#142a40" stroke-width="14" stroke-linecap="round"/>
+  <path d="M0 0 Q5 19 9 37 L14 52" fill="none" stroke="url(#pants)" stroke-width="9.5" stroke-linecap="round"/>
+  <path d="M13 50 Q20 49 25 56 Q24 62 4 60 L1 56 Q5 51 13 50" fill="url(#shoe)" stroke="#183149" stroke-width="2"/>
+  <path d="M7 58 L23 58" stroke="#ef5a9e" stroke-width="2.5" stroke-linecap="round"/>
+ </g>
+ <!-- pescoço e cabeça -->
+ <path d="M58 43 L58 51 Q65 56 70 49 L68 40Z" fill="url(#skin)"/>
+ <ellipse cx="65" cy="29" rx="13" ry="16" fill="url(#skin)" stroke="#553d38" stroke-width="1.3"/>
+ <path d="M52 27 Q49 10 64 10 Q79 10 79 27 L75 23 Q69 19 61 22 L55 31Z" fill="#3b243b"/>
+ <path d="M53 25 Q47 39 53 48 L58 43 L57 29 M76 24 Q84 38 77 48 L72 42 L74 29" fill="#3b243b"/>
+ <ellipse cx="71" cy="29" rx="1.6" ry="1.8" fill="#263444"/>
+ <path d="M76 33 L80 35 L76 37" fill="none" stroke="#b8755d" stroke-width="1.3" stroke-linecap="round"/>
+ <path d="M62 42 Q68 45 73 41" fill="none" stroke="#bd8066" stroke-width="1" opacity=".7"/>
+ <path d="M48 62 L43 79" stroke="#ffffff" stroke-width="2" opacity=".35" stroke-linecap="round"/>
+ </g>
+<g transform="translate(768 160)">
+ <ellipse cx="64" cy="146" rx="27" ry="5" fill="#12283b" opacity=".17" filter="url(#shadow)"/>
+ <!-- perna de trás -->
+ <g transform="translate(62 94) rotate(24.48)">
+  <path d="M0 0 Q-4 20 -8 37 L-12 52" fill="none" stroke="#142a40" stroke-width="13" stroke-linecap="round"/>
+  <path d="M0 0 Q-4 20 -8 37 L-12 52" fill="none" stroke="url(#pants)" stroke-width="9" stroke-linecap="round"/>
+  <path d="M-12 51 Q-20 52 -22 59 Q-12 63 3 59 L5 55 Q-2 51 -12 51" fill="url(#shoe)" stroke="#183149" stroke-width="2"/>
+  <path d="M-17 58 L1 58" stroke="#18a9c2" stroke-width="2.5" stroke-linecap="round"/>
+ </g>
+ <!-- braço de trás -->
+ <g transform="translate(57 56) rotate(-27)">
+  <path d="M0 0 Q-10 14 -12 27 L-8 39" fill="none" stroke="#173149" stroke-width="11" stroke-linecap="round"/>
+  <path d="M0 0 Q-10 14 -12 27 L-8 39" fill="none" stroke="url(#pink)" stroke-width="7.5" stroke-linecap="round"/>
+  <path d="M-8 37 L-5 46" stroke="url(#skin)" stroke-width="6" stroke-linecap="round"/>
+ </g>
+ <!-- tronco -->
+ <path d="M49 48 Q59 43 72 48 L78 88 Q67 98 51 91 L43 62Z" fill="url(#pink)" stroke="#173149" stroke-width="2.5"/>
+ <path d="M54 53 Q64 57 73 54" fill="none" stroke="#ffffff" stroke-width="2" opacity=".55"/>
+ <path d="M61 60 L64 87" stroke="#ffffff" stroke-width="1.5" opacity=".25"/>
+ <!-- braço da frente -->
+ <g transform="translate(73 56) rotate(27)">
+  <path d="M0 0 Q11 13 12 27 L8 39" fill="none" stroke="#173149" stroke-width="12" stroke-linecap="round"/>
+  <path d="M0 0 Q11 13 12 27 L8 39" fill="none" stroke="url(#pink)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M8 37 L5 46" stroke="url(#skin)" stroke-width="6.5" stroke-linecap="round"/>
+  <path d="M5 45 Q1 47 3 52" fill="none" stroke="url(#skin)" stroke-width="5" stroke-linecap="round"/>
+ </g>
+ <!-- perna da frente -->
+ <g transform="translate(62 92) rotate(-24.48)">
+  <path d="M0 0 Q5 19 9 37 L14 52" fill="none" stroke="#142a40" stroke-width="14" stroke-linecap="round"/>
+  <path d="M0 0 Q5 19 9 37 L14 52" fill="none" stroke="url(#pants)" stroke-width="9.5" stroke-linecap="round"/>
+  <path d="M13 50 Q20 49 25 56 Q24 62 4 60 L1 56 Q5 51 13 50" fill="url(#shoe)" stroke="#183149" stroke-width="2"/>
+  <path d="M7 58 L23 58" stroke="#ef5a9e" stroke-width="2.5" stroke-linecap="round"/>
+ </g>
+ <!-- pescoço e cabeça -->
+ <path d="M58 43 L58 51 Q65 56 70 49 L68 40Z" fill="url(#skin)"/>
+ <ellipse cx="65" cy="29" rx="13" ry="16" fill="url(#skin)" stroke="#553d38" stroke-width="1.3"/>
+ <path d="M52 27 Q49 10 64 10 Q79 10 79 27 L75 23 Q69 19 61 22 L55 31Z" fill="#3b243b"/>
+ <path d="M53 25 Q47 39 53 48 L58 43 L57 29 M76 24 Q84 38 77 48 L72 42 L74 29" fill="#3b243b"/>
+ <ellipse cx="71" cy="29" rx="1.6" ry="1.8" fill="#263444"/>
+ <path d="M76 33 L80 35 L76 37" fill="none" stroke="#b8755d" stroke-width="1.3" stroke-linecap="round"/>
+ <path d="M62 42 Q68 45 73 41" fill="none" stroke="#bd8066" stroke-width="1" opacity=".7"/>
+ <path d="M48 62 L43 79" stroke="#ffffff" stroke-width="2" opacity=".35" stroke-linecap="round"/>
+ </g>
+<g transform="translate(896 160)">
+ <ellipse cx="64" cy="146" rx="27" ry="5" fill="#12283b" opacity=".17" filter="url(#shadow)"/>
+ <!-- perna de trás -->
+ <g transform="translate(62 94) rotate(17.3099740034467)">
+  <path d="M0 0 Q-4 20 -8 37 L-12 52" fill="none" stroke="#142a40" stroke-width="13" stroke-linecap="round"/>
+  <path d="M0 0 Q-4 20 -8 37 L-12 52" fill="none" stroke="url(#pants)" stroke-width="9" stroke-linecap="round"/>
+  <path d="M-12 51 Q-20 52 -22 59 Q-12 63 3 59 L5 55 Q-2 51 -12 51" fill="url(#shoe)" stroke="#183149" stroke-width="2"/>
+  <path d="M-17 58 L1 58" stroke="#18a9c2" stroke-width="2.5" stroke-linecap="round"/>
+ </g>
+ <!-- braço de trás -->
+ <g transform="translate(57 56) rotate(-19.091883092036806)">
+  <path d="M0 0 Q-10 14 -12 27 L-8 39" fill="none" stroke="#173149" stroke-width="11" stroke-linecap="round"/>
+  <path d="M0 0 Q-10 14 -12 27 L-8 39" fill="none" stroke="url(#pink)" stroke-width="7.5" stroke-linecap="round"/>
+  <path d="M-8 37 L-5 46" stroke="url(#skin)" stroke-width="6" stroke-linecap="round"/>
+ </g>
+ <!-- tronco -->
+ <path d="M49 48 Q59 43 72 48 L78 88 Q67 98 51 91 L43 62Z" fill="url(#pink)" stroke="#173149" stroke-width="2.5"/>
+ <path d="M54 53 Q64 57 73 54" fill="none" stroke="#ffffff" stroke-width="2" opacity=".55"/>
+ <path d="M61 60 L64 87" stroke="#ffffff" stroke-width="1.5" opacity=".25"/>
+ <!-- braço da frente -->
+ <g transform="translate(73 56) rotate(19.091883092036788)">
+  <path d="M0 0 Q11 13 12 27 L8 39" fill="none" stroke="#173149" stroke-width="12" stroke-linecap="round"/>
+  <path d="M0 0 Q11 13 12 27 L8 39" fill="none" stroke="url(#pink)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M8 37 L5 46" stroke="url(#skin)" stroke-width="6.5" stroke-linecap="round"/>
+  <path d="M5 45 Q1 47 3 52" fill="none" stroke="url(#skin)" stroke-width="5" stroke-linecap="round"/>
+ </g>
+ <!-- perna da frente -->
+ <g transform="translate(62 92) rotate(-17.309974003446687)">
+  <path d="M0 0 Q5 19 9 37 L14 52" fill="none" stroke="#142a40" stroke-width="14" stroke-linecap="round"/>
+  <path d="M0 0 Q5 19 9 37 L14 52" fill="none" stroke="url(#pants)" stroke-width="9.5" stroke-linecap="round"/>
+  <path d="M13 50 Q20 49 25 56 Q24 62 4 60 L1 56 Q5 51 13 50" fill="url(#shoe)" stroke="#183149" stroke-width="2"/>
+  <path d="M7 58 L23 58" stroke="#ef5a9e" stroke-width="2.5" stroke-linecap="round"/>
+ </g>
+ <!-- pescoço e cabeça -->
+ <path d="M58 43 L58 51 Q65 56 70 49 L68 40Z" fill="url(#skin)"/>
+ <ellipse cx="65" cy="29" rx="13" ry="16" fill="url(#skin)" stroke="#553d38" stroke-width="1.3"/>
+ <path d="M52 27 Q49 10 64 10 Q79 10 79 27 L75 23 Q69 19 61 22 L55 31Z" fill="#3b243b"/>
+ <path d="M53 25 Q47 39 53 48 L58 43 L57 29 M76 24 Q84 38 77 48 L72 42 L74 29" fill="#3b243b"/>
+ <ellipse cx="71" cy="29" rx="1.6" ry="1.8" fill="#263444"/>
+ <path d="M76 33 L80 35 L76 37" fill="none" stroke="#b8755d" stroke-width="1.3" stroke-linecap="round"/>
+ <path d="M62 42 Q68 45 73 41" fill="none" stroke="#bd8066" stroke-width="1" opacity=".7"/>
+ <path d="M48 62 L43 79" stroke="#ffffff" stroke-width="2" opacity=".35" stroke-linecap="round"/>
+ </g></svg>
