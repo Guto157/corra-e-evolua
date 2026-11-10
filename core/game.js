@@ -14,7 +14,7 @@ export class RunningGame {
     this.raf = 0;
   }
   start() {
-    if (this.running || this.state.energy < 1) return false;
+    if (this.running) return false;
     this.running = true;
     this.lastTime = 0;
     this.callbacks.onStart?.();
