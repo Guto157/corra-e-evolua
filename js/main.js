@@ -83,7 +83,11 @@ for (const type of ["energy","speed","stamina"]) {
 document.querySelectorAll("[data-character]").forEach(button => button.addEventListener("click", () => {
   if (running) return;
   state.character = button.dataset.character;
-  saveGame(state); render(); drawScene({frame:0});
+  document.documentElement.dataset.character = state.character;
+  window.currentRunner = state.character;
+  saveGame(state); document.documentElement.dataset.character = state.character;
+window.currentRunner = state.character;
+render(); drawScene({frame:0});
 }));
 $("soundButton").addEventListener("click", () => toast("O áudio será adicionado em uma atualização futura."));
 window.addEventListener("beforeunload", () => { game?.dispose(); saveGame(state); });
