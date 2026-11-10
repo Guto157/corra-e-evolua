@@ -31,14 +31,14 @@
     <canvas id="gameCanvas" aria-label="Personagem correndo em uma pista lateral"></canvas>
     <div class="track-overlay"><span id="distanceValue">0 m</span><span id="speedValue">0 km/h</span></div>
   </div>
-  <div class="energy-row"><div><span>⚡ Energia</span><b id="energyValue">10 / 10</b></div><div class="energy-track"><i id="energyBar"></i></div></div>
-  <div class="run-actions"><button class="primary-button" id="runButton">▶ Iniciar corrida</button><button class="secondary-button" id="recoverButton">＋ Recuperar energia</button></div>
-  <p class="hint" id="runHint">Seu personagem corre automaticamente. Quando a energia acabar, receba suas recompensas.</p>
+  <div class="energy-row"><div><span>⚡ Energia para corridas</span><b id="energyValue">15 / 15</b></div><div class="energy-track"><i id="energyBar"></i></div><small class="energy-timer" id="energyTimer">Energia completa</small></div>
+  <div class="run-actions"><button class="primary-button" id="runButton">▶ Iniciar corrida</button></div>
+  <p class="hint" id="runHint">Cada corrida consome 1 energia. Uma energia é recuperada automaticamente a cada 5 minutos.</p>
 </section>
 <section class="lower-grid">
   <article class="panel character-panel"><div class="section-heading"><div><span class="eyebrow">SEU CORREDOR</span><h2>Personagem</h2></div></div>
     <div class="choice-row"><button class="choice active" data-character="male">♂ Masculino</button><button class="choice" data-character="female">♀ Feminino</button></div>
-    <div class="mini-info"><span>Identidade visual fixa</span><b>Equipamentos em breve</b></div>
+    <div class="mini-info"><span>Estilo de corrida</span><b>Visão lateral</b></div>
   </article>
   <article class="panel upgrade-panel"><div class="section-heading"><div><span class="eyebrow">PROGRESSO</span><h2>Melhorias</h2></div></div>
     <div class="upgrade-item"><div><b>⚡ Capacidade de energia</b><small id="energyLevel">Nível 1 · 10 pontos</small></div><button class="buy-button" id="buyEnergy">Melhorar · 50 🪙</button></div>
@@ -47,7 +47,7 @@
   </article>
 </section>
 <section class="panel items-panel"><div class="section-heading"><div><span class="eyebrow">EQUIPAMENTOS</span><h2>Itens de corrida</h2></div></div><p class="items-intro">Os tênis aumentam a distância que você percorre com a mesma energia.</p><div id="itemsList" class="items-list"></div></section>
-<section class="panel summary-panel"><div><span class="eyebrow">RESUMO DA JORNADA</span><h2>Seu progresso</h2></div><div class="summary-stats"><div><small>Distância total</small><b id="totalDistance">0 m</b></div><div><small>Corridas concluídas</small><b id="runsValue">0</b></div><div><small>Energia máxima</small><b id="maxEnergy">10</b></div></div></section>
+<section class="panel summary-panel"><div><span class="eyebrow">RESUMO DA JORNADA</span><h2>Seu progresso</h2></div><div class="summary-stats"><div><small>Distância total</small><b id="totalDistance">0 m</b></div><div><small>Corridas concluídas</small><b id="runsValue">0</b></div><div><small>Energia máxima</small><b id="maxEnergy">15</b></div></div></section>
 </main>
 <footer>Corra e Evolua <span>•</span> Seu ritmo, sua evolução.</footer>
 </div>
