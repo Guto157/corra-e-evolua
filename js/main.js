@@ -45,7 +45,6 @@ function render() {
   $("levelValue").textContent=state.level;
   $("recordValue").textContent=`${fmt(state.record)} m`;
   $("energyValue").textContent=`${state.energy} / ${CONFIG.maxEnergy}`;
-  $("energyBar").style.width=`${state.energy/CONFIG.maxEnergy*100}%`;
   $("energyTimer").textContent=energyCountdown();
   $("totalDistance").textContent=`${fmt(state.totalDistance)} m`;
   $("runsValue").textContent=fmt(state.runs);
@@ -82,7 +81,6 @@ function startRun(){
       $("distanceValue").textContent=`${fmt(data.distance)} m`;
       $("speedValue").textContent=`${Math.round(data.speed*3.6)} km/h`;
       $("energyValue").textContent=`${state.energy} / ${CONFIG.maxEnergy}`;
-      $("energyBar").style.width=`${state.energy/CONFIG.maxEnergy*100}%`;
       $("energyTimer").textContent=energyCountdown();
       drawScene(data);
     },
@@ -114,7 +112,6 @@ setInterval(()=>{
   syncEnergy(state);
   if(state.energy!==before)saveGame(state);
   $("energyValue").textContent=`${state.energy} / ${CONFIG.maxEnergy}`;
-  $("energyBar").style.width=`${state.energy/CONFIG.maxEnergy*100}%`;
   $("energyTimer").textContent=energyCountdown();
   if(!running)$("runButton").disabled=state.energy<1;
   if(!running&&state.energy>0)$("runButton").textContent="▶ Iniciar corrida";
