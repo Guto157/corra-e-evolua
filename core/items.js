@@ -1,12 +1,12 @@
 export const ITEMS = [
-  { id:"basic-shoes", name:"Tênis básico", icon:"👟", price:0, distance:1, energyUse:1, description:"Seu primeiro par. Sem bônus." },
-  { id:"runner-shoes", name:"Tênis corredor", icon:"🥾", price:120, distance:1.35, energyUse:0.96, description:"+35% de distância por corrida." },
-  { id:"pro-shoes", name:"Tênis profissional", icon:"⚡", price:350, distance:1.8, energyUse:0.9, description:"+80% de distância por corrida." },
-  { id:"ultra-shoes", name:"Tênis ultraleve", icon:"🚀", price:900, distance:2.5, energyUse:0.82, description:"+150% de distância por corrida." }
+  { id:"basic-shoes", name:"Tênis básico", icon:"👟", price:0, distance:1, description:"Seu primeiro par. Sem bônus." },
+  { id:"runner-shoes", name:"Tênis corredor", icon:"🥾", price:120, distance:1.35, description:"+35% de distância por corrida." },
+  { id:"pro-shoes", name:"Tênis profissional", icon:"⚡", price:350, distance:1.8, description:"+80% de distância por corrida." },
+  { id:"ultra-shoes", name:"Tênis ultraleve", icon:"🚀", price:900, distance:2.5, description:"+150% de distância por corrida." }
 ];
 export function getEquippedBonuses(state) {
   const equipped = (state.equippedItems || []).map(id => ITEMS.find(item => item.id === id)).filter(Boolean);
-  return equipped.reduce((sum,item)=>({distance:sum.distance*item.distance,energyUse:sum.energyUse*item.energyUse}),{distance:1,energyUse:1});
+  return equipped.reduce((sum,item)=>({distance:sum.distance*item.distance}),{distance:1});
 }
 export function buyOrEquipItem(state,id) {
   const item=ITEMS.find(entry=>entry.id===id);
